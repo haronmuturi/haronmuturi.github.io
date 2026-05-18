@@ -29,6 +29,14 @@
 </head>
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
     <!-- Dark Mode Toggle Button -->
     <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
 
@@ -94,21 +102,21 @@
             <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-info">
-                        <span class="stat-number">3.0+</span>
+                        <span class="stat-number" data-target="3">3.0+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                     <div class="stat-info">
-                        <span class="stat-number">4+</span>
+                        <span class="stat-number" data-target="4">4+</span>
                         <span class="stat-label">Projects Completed</span>
                     </div>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                     <div class="stat-info">
-                        <span class="stat-number">100%</span>
+                        <span class="stat-number" data-target="100">100%</span>
                         <span class="stat-label">Client Satisfaction</span>
                     </div>
                 </div>
@@ -160,6 +168,7 @@
         </div>
     </section>
 
+    
     <!-- ========================================
          EXPERIENCE SECTION
     ======================================== -->
@@ -309,7 +318,7 @@
                         <div class="skill"><i class="fas fa-faucet"></i> Water Pipeline Installation</div>
                         <div class="skill"><i class="fas fa-building"></i> Structural Detailing of Structures</div>
                         <div class="skill"><i class="fas fa-file-invoice-dollar"></i> BOQ Preparation & Reviewing</div>
-                        <div class="skill"><i class="fas fa-chart-line"></i> Progress Monitoring, Evalaution & Reporting</div>
+                        <div class="skill"><i class="fas fa-chart-line"></i> Progress Monitoring, Evaluation & Reporting</div>
                         <div class="skill"><i class="fas fa-flask"></i> Materials Testing</div>
                     </div>
                 </div>
@@ -428,6 +437,8 @@
         </div>
     </section>
 
+    
+
     <!-- ========================================
          CONTACT SECTION
     ======================================== -->
@@ -519,8 +530,12 @@
             <i class="fab fa-twitter"></i>
             <span class="icon-label">Twitter</span>
         </a>
-        
     </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
