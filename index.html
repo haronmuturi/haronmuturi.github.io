@@ -38,7 +38,9 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="images/profilephoto.png" alt="Haron Muturi Profile" class="nav-profile-photo" id="nav-photo" loading="lazy">
+                <div class="profile-clickable" id="profileClickable">
+                    <img src="images/profilephoto.png" alt="Haron Muturi Profile" class="nav-profile-photo" id="nav-photo" loading="lazy">
+                </div>
                 <span>Haron Muturi</span>
             </div>
             
@@ -50,7 +52,7 @@
             
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about">Profile Summary</a></li>
-                <li><a href="#experience">Experiences</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#blog">Favourite Blogs</a></li>
@@ -64,11 +66,73 @@
          HERO SECTION
     ======================================== -->
     <section class="hero">
+        <div class="hero-overlay"></div>
+        
         <div class="hero-content">
-            <h1>Haron Muturi</h1>
-            <p class="title">Civil Engineer</p>
-            <p class="description">Building Sustainable Infrastructure for Tomorrow</p>
-            <p class="description" style="font-size: 0.9rem; margin-top: 1rem;">During Commissioning of the Chuka Modern Market, April 2026</p>
+            <div class="hero-badge">
+                <span class="badge-icon">👋</span>
+                <span class="badge-text">Welcome to my portfolio</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-first">Haron</span>
+                <span class="title-last">Muturi</span>
+            </h1>
+            
+            <div class="hero-role-container">
+                <div class="role-wrapper">
+                    <span class="role-prefix">✦</span>
+                    <span class="role-text" id="rotatingRole">Civil Engineer</span>
+                    <span class="role-suffix">✦</span>
+                </div>
+            </div>
+            
+            <p class="hero-description">
+                Designing tomorrow's infrastructure with sustainable solutions that stand the test of time.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-info">
+                        <span class="stat-number">3.0+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-info">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-info">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-cta">
+                <a href="#contact" class="cta-primary">
+                    <span>Let's Collaborate</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#experience" class="cta-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    <span>View My Work</span>
+                </a>
+            </div>
+            
+            <p class="hero-note">
+                <i class="fas fa-camera"></i> Connecting Communities through Sustainable Infrastructure
+            </p>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll</span>
         </div>
     </section>
 
@@ -80,8 +144,8 @@
             <h2>Profile Summary</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>A self-motivated Civil Engineer with over 2 years practical experience in building construction, site supervision, and infrastructure projects. Skilled in reading engineering drawings, organizing site activities, and ensuring quality work through materials testing and inspection. Experienced in surveying and levelling, drainage works, and basic road construction. Able to prepare reports, use AutoCAD for drawing support, and apply Microsoft Excel for data and documentation. A good team player with strong communication skills, ready to contribute and grow in the construction industry.</p>
-                    <p>I've worked on residential, commercial, and infrastructure projects that make a difference in communities.</p>
+                    <p>A dedicated Civil Engineer with 2+ years of progressive experience in building construction, site supervision, and infrastructure development. Proven track record in the successful commissioning of the Chuka Modern Market, a multi-million shilling Affordable Housing Program project under the State Department of Housing & Urban Development. Skilled in designing and supervising civil works including drainage systems, roads, and water supply networks. Proficient in reading engineering drawings, structural detailing, materials testing, and quality control procedures. Experienced in engineering surveys, setting out, levelling, and using AutoCAD for design support.</p>
+                    <p>Throughout my career, I have worked on diverse projects ranging from water pipeline installations at MEWASSCO to box culvert construction for the Kenya Rural Roads Authority (KeRRA). My technical expertise includes BOQ review, progress reporting, compliance monitoring, and ensuring adherence to design standards and specifications. I am passionate about building sustainable infrastructure that makes a real difference in communities, and I bring strong team collaboration, communication, and problem-solving skills to every project I undertake.</p>
                 </div>
                 <div class="about-gallery">
                     <h3><i class="fas fa-images"></i> Project Gallery</h3>
@@ -117,11 +181,11 @@
                 </div>
                 <div class="exp-content">
                     <ul>
-                        <p><i class="fas fa-check-circle"></i> Designing and supervising civil works (drainage, roads, water supply); review drawings and BOQs.</p>
-                        <p><i class="fas fa-check-circle"></i> Designing and reviewing structural systems; assist in steel/concrete detailing, site inspections.</p>
-                        <p><i class="fas fa-check-circle"></i> Supporting senior engineers in structural drafting, calculations, and supervision of foundation works.</p>
-                        <p><i class="fas fa-check-circle"></i> Inspecting building construction for code compliance, structural integrity, and material use.</p>
-                        <p><i class="fas fa-check-circle"></i> Supervising civil works implementation, adherence to specifications and site reporting.</p>
+                        <li><i class="fas fa-check-circle"></i> Designing and supervising civil works (drainage, roads, water supply); review drawings and BOQs.</li>
+                        <li><i class="fas fa-check-circle"></i> Designing and reviewing structural systems; assist in steel/concrete detailing, site inspections.</li>
+                        <li><i class="fas fa-check-circle"></i> Supporting senior engineers in structural drafting, calculations, and supervision of foundation works.</li>
+                        <li><i class="fas fa-check-circle"></i> Inspecting building construction for code compliance, structural integrity, and material use.</li>
+                        <li><i class="fas fa-check-circle"></i> Supervising civil works implementation, adherence to specifications and site reporting.</li>
                     </ul>
                 </div>
             </div>
@@ -140,11 +204,11 @@
                 </div>
                 <div class="exp-content">
                     <ul>
-                        <p><i class="fas fa-check-circle"></i> Collected, validated, and analyzed field data to support reporting accuracy and decision-making.</p>
-                        <p><i class="fas fa-check-circle"></i> Prepared analytical and technical reports aligned with compliance and documentation standards.</p>
-                        <p><i class="fas fa-check-circle"></i> Conducted data analysis using Microsoft Excel to identify inconsistencies and trends.</p>
-                        <p><i class="fas fa-check-circle"></i> Supported documentation review processes to ensure completeness and accuracy.</p>
-                        <p><i class="fas fa-check-circle"></i> Assisted in compliance monitoring of construction activities against specifications.</p>
+                        <li><i class="fas fa-check-circle"></i> Collected, validated, and analyzed field data to support reporting accuracy and decision-making.</li>
+                        <li><i class="fas fa-check-circle"></i> Prepared analytical and technical reports aligned with compliance and documentation standards.</li>
+                        <li><i class="fas fa-check-circle"></i> Conducted data analysis using Microsoft Excel to identify inconsistencies and trends.</li>
+                        <li><i class="fas fa-check-circle"></i> Supported documentation review processes to ensure completeness and accuracy.</li>
+                        <li><i class="fas fa-check-circle"></i> Assisted in compliance monitoring of construction activities against specifications.</li>
                     </ul>
                 </div>
             </div>
@@ -163,11 +227,11 @@
                 </div>
                 <div class="exp-content">
                     <ul>
-                        <p><i class="fas fa-check-circle"></i> Assisted in inspection, installation, and maintenance of water distribution pipelines.</p>
-                        <p><i class="fas fa-check-circle"></i> Participated in field surveys and levelling works for pipeline alignment.</p>
-                        <p><i class="fas fa-check-circle"></i> Supported system inspections and intake assessments for hydraulics and stormwater management.</p>
-                        <p><i class="fas fa-check-circle"></i> Conducted water quality monitoring and data collection for environmental compliance.</p>
-                        <p><i class="fas fa-check-circle"></i> Assisted in asset inspections and preparation of field reports for road asset management.</p>
+                        <li><i class="fas fa-check-circle"></i> Assisted in inspection, installation, and maintenance of water distribution pipelines.</li>
+                        <li><i class="fas fa-check-circle"></i> Participated in field surveys and levelling works for pipeline alignment.</li>
+                        <li><i class="fas fa-check-circle"></i> Supported system inspections and intake assessments for hydraulics and stormwater management.</li>
+                        <li><i class="fas fa-check-circle"></i> Conducted water quality monitoring and data collection for environmental compliance.</li>
+                        <li><i class="fas fa-check-circle"></i> Assisted in asset inspections and preparation of field reports for road asset management.</li>
                     </ul>
                 </div>
             </div>
@@ -186,9 +250,9 @@
                 </div>
                 <div class="exp-content">
                     <ul>
-                        <p><i class="fas fa-check-circle"></i> Assisted in checking levels during backfilling of culvert sections.</p>
-                        <p><i class="fas fa-check-circle"></i> Supervised box culvert and access pipe culvert construction according to design standards.</p>
-                        <p><i class="fas fa-check-circle"></i> Performed materials testing including Atterberg limits and sieve analysis in the laboratory.</p>
+                        <li><i class="fas fa-check-circle"></i> Assisted in checking levels during backfilling of culvert sections.</li>
+                        <li><i class="fas fa-check-circle"></i> Supervised box culvert and access pipe culvert construction according to design standards.</li>
+                        <li><i class="fas fa-check-circle"></i> Performed materials testing including Atterberg limits and sieve analysis in the laboratory.</li>
                     </ul>
                 </div>
             </div>
@@ -202,7 +266,6 @@
         <div class="container">
             <h2><i class="fas fa-trophy"></i> Achievements & Certifications</h2>
             <div class="achievement-grid">
-                
                 <div class="achievement-card">
                     <div class="gallery-item"><img src="images/achievements/chuka1.jpg" alt="Chuka Modern Market Commissioning" loading="lazy"></div>
                     <div class="achievement-year"><i class="far fa-calendar-alt"></i> April 2026</div>
@@ -234,20 +297,19 @@
         <div class="container">
             <h2><i class="fas fa-cogs"></i> Skills & Competencies</h2>
             <div class="skills-showcase">
-                
                 <div class="skills-category">
                     <h3><i class="fas fa-tools"></i> Technical Skills</h3>
                     <div class="skills-grid">
                         <div class="skill"><i class="fas fa-hard-hat"></i> Site Supervision</div>
                         <div class="skill"><i class="fas fa-vial"></i> Quality Control & Testing</div>
-                        <div class="skill"><i class="fas fa-drafting-compass"></i> Reading Engineering Drawings</div>
-                        <div class="skill"><i class="fas fa-ruler"></i> Setting Out & Levelling</div>
-                        <div class="skill"><i class="fas fa-water"></i> Drainage Systems</div>
-                        <div class="skill"><i class="fas fa-road"></i> Road Construction</div>
+                        <div class="skill"><i class="fas fa-drafting-compass"></i> Engineering Drawings Preparation</div>
+                        <div class="skill"><i class="fas fa-ruler"></i> Setting Out & Levelling structures</div>
+                        <div class="skill"><i class="fas fa-water"></i> Drainage Systems Installations and Inspection</div>
+                        <div class="skill"><i class="fas fa-road"></i> Road Construction works and Procedures</div>
                         <div class="skill"><i class="fas fa-faucet"></i> Water Pipeline Installation</div>
-                        <div class="skill"><i class="fas fa-building"></i> Structural Detailing</div>
-                        <div class="skill"><i class="fas fa-file-invoice-dollar"></i> BOQ Review</div>
-                        <div class="skill"><i class="fas fa-chart-line"></i> Progress Reporting</div>
+                        <div class="skill"><i class="fas fa-building"></i> Structural Detailing of Structures</div>
+                        <div class="skill"><i class="fas fa-file-invoice-dollar"></i> BOQ Preparation & Reviewing</div>
+                        <div class="skill"><i class="fas fa-chart-line"></i> Progress Monitoring, Evalaution & Reporting</div>
                         <div class="skill"><i class="fas fa-flask"></i> Materials Testing</div>
                     </div>
                 </div>
@@ -256,7 +318,7 @@
                     <h3><i class="fas fa-laptop-code"></i> Software & Tools</h3>
                     <div class="skills-grid">
                         <div class="skill"><i class="fas fa-cube"></i> AutoCAD</div>
-                        <div class="skill"><i class="fas fa-file-excel"></i> Microsoft Excel</div>
+                        <div class="skill"><i class="fas fa-file-excel"></i> Microsoft Excel Data Analysis</div>
                         <div class="skill"><i class="fas fa-globe"></i> RTK & Theodolite</div>
                         <div class="skill"><i class="fas fa-building"></i> Protastructure</div>
                         <div class="skill"><i class="fas fa-chalkboard"></i> MS Office Suite</div>
@@ -366,7 +428,7 @@
         </div>
     </section>
 
-        <!-- ========================================
+    <!-- ========================================
          CONTACT SECTION
     ======================================== -->
     <section id="contact" class="contact">
@@ -385,10 +447,11 @@
                         <p class="address-note"><i class="fas fa-hand-pointer"></i> Click address to open Google Maps</p>
                     </div>
                 </div>
-                <form id="contact-form">
+                
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="f9e83fab-63e6-40a6-b26f-9d4dcf87f1e9">
-                    <input type="hidden" name="subject" value="New Message from Portfolio">
-                    <input type="hidden" name="from_name" value="Haron Portfolio">
+                    <input type="hidden" name="subject" value="New Message from Haron's Portfolio">
+                    <input type="hidden" name="from_name" value="Haron Muturi Portfolio">
                     <input type="hidden" name="redirect" value="https://web3forms.com/success">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -440,6 +503,10 @@
          FLOATING SOCIAL ICONS
     ======================================== -->
     <div class="floating-social">
+        <a href="https://wa.me/254795171596" target="_blank" class="floating-icon whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="icon-label">WhatsApp</span>
+        </a>
         <a href="https://linkedin.com/in/haron-muturi" target="_blank" class="floating-icon linkedin" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
             <span class="icon-label">LinkedIn</span>
@@ -452,10 +519,7 @@
             <i class="fab fa-twitter"></i>
             <span class="icon-label">Twitter</span>
         </a>
-        <a href="mailto:haronmuturi739@gmail.com" class="floating-icon email" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-            <span class="icon-label">Email</span>
-        </a>
+        
     </div>
 
     <script src="script.js"></script>
