@@ -1,30 +1,81 @@
 /**
  * ========================================
  * HARON MUTURI - CIVIL ENGINEER PORTFOLIO
- * PROFESSIONAL JAVASCRIPT (CLEANED)
+ * COMPLETE JAVASCRIPT
  * ========================================
  * 
  * TABLE OF CONTENTS:
- * 1. DARK MODE TOGGLE
- * 2. MOBILE MENU (Hamburger)
- * 3. SMOOTH SCROLLING
- * 4. SCROLL SPY (Active Nav Link)
- * 5. IMAGE VIEWER MODAL
- * 6. IMAGE UPLOAD
- * 7. CONTACT FORM
- * 8. COMMENTS SECTION
- * 9. LAZY LOADING & SCROLL REVEAL
- * 10. INITIALIZATION
+ * 1. PRELOADER
+ * 2. PROGRESS BAR
+ * 3. BACK TO TOP BUTTON
+ * 4. DARK MODE TOGGLE
+ * 5. MOBILE MENU (Hamburger)
+ * 6. SMOOTH SCROLLING
+ * 7. SCROLL SPY (Active Nav Link)
+ * 8. IMAGE VIEWER MODAL
+ * 9. IMAGE UPLOAD
+ * 10. CONTACT FORM
+ * 11. NEWSLETTER FORM
+ * 12. LAZY LOADING & SCROLL REVEAL
+ * 13. ROTATING ROLES
+ * 14. CLICKABLE PROFILE PICTURE
+ * 15. TESTIMONIALS CAROUSEL
+ * 16. INITIALIZATION
  * ========================================
  */
 
 // ========================================
-// GOOGLE APPS SCRIPT API URL
+// 1. PRELOADER
 // ========================================
-const API_URL = 'https://script.google.com/macros/s/AKfycbzNepqq878tiTtbIrCuEgytwnGiB5bi9dR3p2DdMYCvcNVHkFPypYrn_GNcqdSJUzccDA/exec';
+(function initPreloader() {
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }
+    });
+})();
 
 // ========================================
-// 1. DARK MODE TOGGLE
+// 2. PROGRESS BAR
+// ========================================
+(function initProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    if (!progressBar) return;
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+})();
+
+// ========================================
+// 3. BACK TO TOP BUTTON
+// ========================================
+(function initBackToTop() {
+    const backToTop = document.getElementById('backToTop');
+    if (!backToTop) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// ========================================
+// 4. DARK MODE TOGGLE
 // ========================================
 (function initDarkMode() {
     const toggle = document.getElementById('darkModeToggle');
@@ -43,7 +94,7 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbzNepqq878tiTtbIrCuEgyt
 })();
 
 // ========================================
-// 2. MOBILE MENU (Hamburger)
+// 5. MOBILE MENU (Hamburger)
 // ========================================
 (function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
@@ -53,18 +104,20 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbzNepqq878tiTtbIrCuEgyt
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     });
 })();
 
 // ========================================
-// 3. SMOOTH SCROLLING
+// 6. SMOOTH SCROLLING
 // ========================================
 (function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -82,7 +135,7 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbzNepqq878tiTtbIrCuEgyt
 })();
 
 // ========================================
-// 4. SCROLL SPY (Active Nav Link)
+// 7. SCROLL SPY (Active Nav Link)
 // ========================================
 (function initScrollSpy() {
     const sections = document.querySelectorAll('section');
@@ -112,7 +165,7 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbzNepqq878tiTtbIrCuEgyt
 })();
 
 // ========================================
-// 5. IMAGE VIEWER MODAL
+// 8. IMAGE VIEWER MODAL
 // ========================================
 (function initImageModal() {
     const modal = document.getElementById('imageModal');
@@ -234,11 +287,10 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbzNepqq878tiTtbIrCuEgyt
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.style.display === 'block') closeModal(); });
     
     attachListeners();
-    window.attachImageClickListeners = attachListeners;
 })();
 
 // ========================================
-// 6. IMAGE UPLOAD
+// 9. IMAGE UPLOAD
 // ========================================
 window.uploadImage = function(galleryId) {
     const input = document.createElement('input');
@@ -274,43 +326,43 @@ window.uploadImage = function(galleryId) {
 };
 
 // ========================================
-// 7. CONTACT FORM
+// 10. CONTACT FORM (Web3Forms)
 // ========================================
 (function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    
+    newForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        const name = form.querySelector('input[name="name"]')?.value;
-        const email = form.querySelector('input[name="email"]')?.value;
-        const message = form.querySelector('textarea[name="message"]')?.value;
-        
-        const btn = form.querySelector('button');
+        const btn = newForm.querySelector('button');
         const originalHtml = btn?.innerHTML || 'Send Message';
+        
         if (btn) {
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         }
 
         try {
-            const res = await fetch(API_URL, {
+            const formData = new FormData(newForm);
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'sendMessage', name, email, message })
+                body: formData
             });
-            const data = await res.json();
+            const data = await response.json();
             
             if (data.success) {
-                alert('Message sent successfully! I will get back to you soon.');
-                form.reset();
+                alert('✅ Message sent successfully! I will get back to you soon.');
+                newForm.reset();
             } else {
-                throw new Error(data.error || 'Failed');
+                throw new Error(data.message || 'Failed to send');
             }
-        } catch (err) {
-            console.error(err);
-            alert('Failed to send message. Please try again or email me directly.');
+        } catch (error) {
+            console.error('Contact form error:', error);
+            alert('❌ Failed to send message. Please email me directly at haronmuturi739@gmail.com');
         }
         
         if (btn) {
@@ -321,78 +373,43 @@ window.uploadImage = function(galleryId) {
 })();
 
 // ========================================
-// 8. COMMENTS SECTION
+// 11. NEWSLETTER FORM
 // ========================================
-(function initComments() {
-    const form = document.getElementById('commentForm');
-    const list = document.getElementById('commentsList');
-    if (!form || !list) return;
+(function initNewsletterForm() {
+    const form = document.getElementById('newsletterForm');
+    if (!form) return;
 
-    async function loadComments() {
-        try {
-            const res = await fetch(`${API_URL}?action=getComments&t=${Date.now()}`);
-            const data = await res.json();
-
-            if (!data.success || !data.comments?.length) {
-                list.innerHTML = '<div class="no-comments">No comments yet. Be the first to leave a comment!</div>';
-                return;
-            }
-
-            const escape = (text) => {
-                const div = document.createElement('div');
-                div.textContent = text;
-                return div.innerHTML;
-            };
-
-            list.innerHTML = [...data.comments].reverse().map(c => `
-                <div class="comment-item">
-                    <div class="comment-header">
-                        <span class="comment-author">👤 ${escape(c.name || 'Anonymous')}</span>
-                        <span class="comment-date">📅 ${c.date || ''}</span>
-                    </div>
-                    <div class="comment-text">${escape(c.comment || '')}</div>
-                </div>
-            `).join('');
-        } catch (err) {
-            console.error(err);
-            list.innerHTML = '<div class="no-comments">Unable to load comments. Please try again later.</div>';
-        }
-    }
-
-    form.addEventListener('submit', async (e) => {
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    
+    newForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        const name = form.querySelector('input[name="name"]')?.value.trim();
-        const comment = form.querySelector('textarea[name="message"]')?.value.trim();
+        const btn = newForm.querySelector('button');
+        const originalHtml = btn?.innerHTML || 'Subscribe';
         
-        if (!name) return alert('Please enter your name');
-        if (!comment) return alert('Please enter your comment');
-        
-        const btn = form.querySelector('button');
-        const originalHtml = btn?.innerHTML || 'Post Comment';
         if (btn) {
             btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Posting...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
         }
 
         try {
-            const res = await fetch(API_URL, {
+            const formData = new FormData(newForm);
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'addComment', name, comment })
+                body: formData
             });
-            const data = await res.json();
+            const data = await response.json();
             
             if (data.success) {
-                alert('Comment posted successfully!');
-                form.reset();
-                loadComments();
+                alert('✅ Successfully subscribed! Thank you.');
+                newForm.reset();
             } else {
-                throw new Error(data.error || 'Failed');
+                throw new Error(data.message || 'Failed to subscribe');
             }
-        } catch (err) {
-            console.error(err);
-            alert('Failed to post comment. Please try again.');
+        } catch (error) {
+            console.error('Newsletter error:', error);
+            alert('❌ Failed to subscribe. Please try again.');
         }
         
         if (btn) {
@@ -400,12 +417,10 @@ window.uploadImage = function(galleryId) {
             btn.innerHTML = originalHtml;
         }
     });
-
-    loadComments();
 })();
 
 // ========================================
-// 9. LAZY LOADING & SCROLL REVEAL
+// 12. LAZY LOADING & SCROLL REVEAL
 // ========================================
 (function initLazyAndReveal() {
     if ('IntersectionObserver' in window) {
@@ -422,7 +437,7 @@ window.uploadImage = function(galleryId) {
         lazyImages.forEach(img => imageObserver.observe(img));
         
         // Scroll reveal animations
-        const revealElements = document.querySelectorAll('.exp-card, .achievement-card, .blog-post, .skill');
+        const revealElements = document.querySelectorAll('.exp-card, .achievement-card, .blog-post, .skill, .testimonial-card');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -443,7 +458,110 @@ window.uploadImage = function(galleryId) {
 })();
 
 // ========================================
-// 10. INITIALIZATION
+// 13. ROTATING ROLES
+// ========================================
+const roles = [
+    "Civil Engineer", 
+    "Planning and Feasibility Study", 
+    "Designing and Building", 
+    "Project Management", 
+    "Survey Works", 
+    "Quality Assurance", 
+    "Maintenance and Retrofitting"
+];
+let roleIndex = 0;
+const roleElement = document.getElementById('rotatingRole');
+
+if (roleElement) {
+    setInterval(() => {
+        roleIndex = (roleIndex + 1) % roles.length;
+        roleElement.style.opacity = '0';
+        setTimeout(() => {
+            roleElement.textContent = roles[roleIndex];
+            roleElement.style.opacity = '1';
+        }, 300);
+    }, 3000);
+}
+
+// ========================================
+// 14. CLICKABLE PROFILE PICTURE - ZOOM MODAL
+// ========================================
+(function initProfileClick() {
+    const profileContainer = document.getElementById('profileClickable');
+    const profileImg = document.getElementById('nav-photo');
+    
+    if (!profileContainer || !profileImg) return;
+    
+    const profileModal = document.createElement('div');
+    profileModal.className = 'profile-modal';
+    profileModal.id = 'profileModal';
+    profileModal.innerHTML = `
+        <span class="profile-modal-close">&times;</span>
+        <div class="profile-modal-content">
+            <img class="profile-modal-img" src="${profileImg.src}" alt="Haron Muturi - Professional Profile">
+            <div class="profile-modal-caption">
+                <i class="fas fa-user"></i> Haron Muturi - Civil Engineer
+            </div>
+        </div>
+    `;
+    document.body.appendChild(profileModal);
+    
+    const modal = document.getElementById('profileModal');
+    const closeBtn = modal.querySelector('.profile-modal-close');
+    const modalImg = modal.querySelector('.profile-modal-img');
+    
+    profileContainer.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        modalImg.src = profileImg.src;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    closeBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+    });
+})();
+
+// ========================================
+// 15. TESTIMONIALS CAROUSEL (Optional)
+// ========================================
+(function initTestimonials() {
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    if (!testimonials.length || testimonials.length <= 3) return;
+    
+    // Simple fade-in animation for testimonials on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    testimonials.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+        observer.observe(card);
+    });
+})();
+
+// ========================================
+// 16. INITIALIZATION
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
@@ -453,6 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth > 768 && navLinks?.classList.contains('active')) {
             hamburger?.classList.remove('active');
             navLinks.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
     });
 });
