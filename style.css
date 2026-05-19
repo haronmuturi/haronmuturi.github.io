@@ -136,7 +136,6 @@ h3 {
     animation: fadeInUp 0.3s ease;
 }
 
-/* Optional: Add a subtle border glow */
 .back-to-top:active {
     transform: scale(0.95);
 }
@@ -1377,8 +1376,8 @@ body.dark-mode .dark-mode-toggle { background: #e94560; }
     #newsletterForm { flex-direction: column; align-items: center; }
     #newsletterForm input { width: 100%; border-radius: 50px; }
     #newsletterForm button { width: auto; min-width: 150px; }
-    @media (max-width: 768px) {
-    /* Back to Top - Left side on mobile too */
+    
+    /* Back to Top - Left side on mobile */
     .back-to-top {
         bottom: 80px;
         left: 15px;
@@ -1386,17 +1385,6 @@ body.dark-mode .dark-mode-toggle { background: #e94560; }
         height: 40px;
         font-size: 1rem;
     }
-}
-
-@media (max-width: 480px) {
-    .back-to-top {
-        bottom: 70px;
-        left: 12px;
-        width: 38px;
-        height: 38px;
-        font-size: 0.9rem;
-    }
-}
 }
 
 @media (max-width: 480px) {
@@ -1425,7 +1413,13 @@ body.dark-mode .dark-mode-toggle { background: #e94560; }
     .floating-social { right: 12px; bottom: 70px; gap: 8px; }
     .floating-icon { width: 40px; height: 40px; font-size: 0.9rem; }
     
-    .back-to-top { bottom: 80px; width: 40px; height: 40px; font-size: 1rem; }
+    .back-to-top {
+        bottom: 70px;
+        left: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
 }
 
 @media print {
