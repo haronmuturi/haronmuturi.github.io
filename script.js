@@ -14,12 +14,12 @@
  * 7. SCROLL SPY (Active Nav Link)
  * 8. IMAGE VIEWER MODAL
  * 9. IMAGE UPLOAD
- * 10. CONTACT FORM
- * 11. NEWSLETTER FORM
+ * 10. CONTACT FORM (Web3Forms)
+ * 11. NEWSLETTER FORM (Web3Forms)
  * 12. LAZY LOADING & SCROLL REVEAL
  * 13. ROTATING ROLES
  * 14. CLICKABLE PROFILE PICTURE
- * 15. TESTIMONIALS CAROUSEL
+ * 15. TESTIMONIALS ANIMATION
  * 16. INITIALIZATION
  * ========================================
  */
@@ -373,7 +373,7 @@ window.uploadImage = function(galleryId) {
 })();
 
 // ========================================
-// 11. NEWSLETTER FORM
+// 11. NEWSLETTER FORM (Web3Forms)
 // ========================================
 (function initNewsletterForm() {
     const form = document.getElementById('newsletterForm');
@@ -535,13 +535,12 @@ if (roleElement) {
 })();
 
 // ========================================
-// 15. TESTIMONIALS CAROUSEL (Optional)
+// 15. TESTIMONIALS ANIMATION
 // ========================================
 (function initTestimonials() {
     const testimonials = document.querySelectorAll('.testimonial-card');
-    if (!testimonials.length || testimonials.length <= 3) return;
+    if (!testimonials.length) return;
     
-    // Simple fade-in animation for testimonials on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
