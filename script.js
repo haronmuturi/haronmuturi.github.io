@@ -156,7 +156,9 @@
 
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            link.classList.toggle('active', href === `#${current}`);
+            if (href) {
+                link.classList.toggle('active', href === `#${current}`);
+            }
         });
     }
 
@@ -164,9 +166,8 @@
     updateActiveLink();
 })();
 
-
 // ========================================
-// 8. IMAGE VIEWER MODAL (With Google Sheets Sync)
+// 8. IMAGE VIEWER MODAL
 // ========================================
 (function initImageModal() {
     const modal = document.getElementById('imageModal');
@@ -181,14 +182,11 @@
     
     if (!modal) return;
 
-    // REPLACE WITH YOUR GOOGLE SCRIPT URL
-    const API_URL = 'https://script.google.com/macros/s/AKfycbwCSc6nQUFRAJZFAbs-rAbYUgpcNZ-qZUUna3UYORCwcwoTxzbQDTqPt3_mKD1w6h4HSA/exec';
+    const API_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
     
     let currentSrc = '';
     let currentStats = { views: 0, likes: 0, dislikes: 0 };
-    let userInteractions = {}; // Track user actions per image
 
-    // Load stats from Google Sheets
     async function loadStatsFromCloud(imageSrc) {
         try {
             const response = await fetch(`${API_URL}?action=getStats&imageUrl=${encodeURIComponent(imageSrc)}`);
@@ -200,7 +198,6 @@
                 currentStats = { views: 0, likes: 0, dislikes: 0 };
             }
             
-            // Check local user interaction
             const userLiked = localStorage.getItem(`user_liked_${imageSrc}`) === 'true';
             const userDisliked = localStorage.getItem(`user_disliked_${imageSrc}`) === 'true';
             
@@ -212,7 +209,6 @@
         }
     }
 
-    // Save stats to Google Sheets
     async function saveStatsToCloud() {
         try {
             const response = await fetch(API_URL, {
@@ -233,41 +229,29 @@
         }
     }
 
-    // Update display with current stats
     function updateDisplay(userLiked, userDisliked) {
         if (viewSpan) viewSpan.textContent = currentStats.views;
         if (likeSpan) likeSpan.textContent = currentStats.likes;
         if (dislikeSpan) dislikeSpan.textContent = currentStats.dislikes;
         
         if (likeBtn) {
-            if (userLiked) {
-                likeBtn.classList.add('liked');
-            } else {
-                likeBtn.classList.remove('liked');
-            }
+            userLiked ? likeBtn.classList.add('liked') : likeBtn.classList.remove('liked');
         }
         
         if (dislikeBtn) {
-            if (userDisliked) {
-                dislikeBtn.classList.add('disliked');
-            } else {
-                dislikeBtn.classList.remove('disliked');
-            }
+            userDisliked ? dislikeBtn.classList.add('disliked') : dislikeBtn.classList.remove('disliked');
         }
     }
 
-    // Handle like action
     async function handleLike() {
         const userLiked = localStorage.getItem(`user_liked_${currentSrc}`) === 'true';
         const userDisliked = localStorage.getItem(`user_disliked_${currentSrc}`) === 'true';
         
         if (userLiked) {
-            // Unlike
             currentStats.likes--;
             localStorage.setItem(`user_liked_${currentSrc}`, 'false');
             updateDisplay(false, userDisliked);
         } else {
-            // Like
             if (userDisliked) {
                 currentStats.dislikes--;
                 localStorage.setItem(`user_disliked_${currentSrc}`, 'false');
@@ -281,22 +265,18 @@
                 setTimeout(() => likeBtn.style.animation = '', 500);
             }
         }
-        
         await saveStatsToCloud();
     }
 
-    // Handle dislike action
     async function handleDislike() {
         const userLiked = localStorage.getItem(`user_liked_${currentSrc}`) === 'true';
         const userDisliked = localStorage.getItem(`user_disliked_${currentSrc}`) === 'true';
         
         if (userDisliked) {
-            // Undislike
             currentStats.dislikes--;
             localStorage.setItem(`user_disliked_${currentSrc}`, 'false');
             updateDisplay(userLiked, false);
         } else {
-            // Dislike
             if (userLiked) {
                 currentStats.likes--;
                 localStorage.setItem(`user_liked_${currentSrc}`, 'false');
@@ -310,21 +290,17 @@
                 setTimeout(() => dislikeBtn.style.animation = '', 300);
             }
         }
-        
         await saveStatsToCloud();
     }
 
-    // Open modal and load stats
     async function openModal(img) {
         currentSrc = img.src;
         modal.style.display = 'block';
         modalImg.src = currentSrc;
         if (captionEl) captionEl.textContent = img.alt || '';
         
-        // Load stats from cloud
         await loadStatsFromCloud(currentSrc);
         
-        // Increment view count
         currentStats.views++;
         await saveStatsToCloud();
         updateDisplay(
@@ -495,7 +471,6 @@ window.uploadImage = function(galleryId) {
 // ========================================
 (function initLazyAndReveal() {
     if ('IntersectionObserver' in window) {
-        // Lazy loading images
         const lazyImages = document.querySelectorAll('img[loading="lazy"]');
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -507,7 +482,6 @@ window.uploadImage = function(galleryId) {
         });
         lazyImages.forEach(img => imageObserver.observe(img));
         
-        // Scroll reveal animations
         const revealElements = document.querySelectorAll('.exp-card, .achievement-card, .blog-post, .skill, .testimonial-card');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -555,7 +529,7 @@ if (roleElement) {
 }
 
 // ========================================
-// 14. CLICKABLE PROFILE PICTURE - ZOOM MODAL
+// 14. CLICKABLE PROFILE PICTURE
 // ========================================
 (function initProfileClick() {
     const profileContainer = document.getElementById('profileClickable');
