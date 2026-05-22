@@ -164,8 +164,9 @@
     updateActiveLink();
 })();
 
+
 // ========================================
-// 8. IMAGE VIEWER MODAL
+// 8. IMAGE VIEWER MODAL (With Google Sheets Sync)
 // ========================================
 (function initImageModal() {
     const modal = document.getElementById('imageModal');
@@ -180,94 +181,164 @@
     
     if (!modal) return;
 
-    let stats = {};
+    // REPLACE WITH YOUR GOOGLE SCRIPT URL
+    const API_URL = 'https://script.google.com/macros/s/AKfycbwCSc6nQUFRAJZFAbs-rAbYUgpcNZ-qZUUna3UYORCwcwoTxzbQDTqPt3_mKD1w6h4HSA/exec';
+    
     let currentSrc = '';
+    let currentStats = { views: 0, likes: 0, dislikes: 0 };
+    let userInteractions = {}; // Track user actions per image
 
-    const getStats = (src) => {
-        if (!stats[src]) {
-            const saved = localStorage.getItem(`img_stats_${src}`);
-            stats[src] = saved ? JSON.parse(saved) : { views: 0, likes: 0, dislikes: 0, userLiked: false, userDisliked: false };
-        }
-        return stats[src];
-    };
-
-    const updateDisplay = () => {
-        const s = stats[currentSrc];
-        if (!s) return;
-        if (viewSpan) viewSpan.textContent = s.views;
-        if (likeSpan) likeSpan.textContent = s.likes;
-        if (dislikeSpan) dislikeSpan.textContent = s.dislikes;
-        if (likeBtn) likeBtn.classList.toggle('liked', s.userLiked);
-        if (dislikeBtn) dislikeBtn.classList.toggle('disliked', s.userDisliked);
-    };
-
-    const saveStats = (src) => localStorage.setItem(`img_stats_${src}`, JSON.stringify(stats[src]));
-
-    const handleLike = () => {
-        const s = stats[currentSrc];
-        if (!s) return;
-        
-        if (s.userLiked) {
-            s.likes--;
-            s.userLiked = false;
-        } else {
-            if (s.userDisliked) {
-                s.dislikes--;
-                s.userDisliked = false;
-                if (dislikeBtn) dislikeBtn.classList.remove('disliked');
+    // Load stats from Google Sheets
+    async function loadStatsFromCloud(imageSrc) {
+        try {
+            const response = await fetch(`${API_URL}?action=getStats&imageUrl=${encodeURIComponent(imageSrc)}`);
+            const data = await response.json();
+            
+            if (data.success && data.stats) {
+                currentStats = data.stats;
+            } else {
+                currentStats = { views: 0, likes: 0, dislikes: 0 };
             }
-            s.likes++;
-            s.userLiked = true;
+            
+            // Check local user interaction
+            const userLiked = localStorage.getItem(`user_liked_${imageSrc}`) === 'true';
+            const userDisliked = localStorage.getItem(`user_disliked_${imageSrc}`) === 'true';
+            
+            updateDisplay(userLiked, userDisliked);
+        } catch (error) {
+            console.error('Error loading stats:', error);
+            currentStats = { views: 0, likes: 0, dislikes: 0 };
+            updateDisplay(false, false);
+        }
+    }
+
+    // Save stats to Google Sheets
+    async function saveStatsToCloud() {
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'updateStats',
+                    imageUrl: currentSrc,
+                    views: currentStats.views,
+                    likes: currentStats.likes,
+                    dislikes: currentStats.dislikes
+                })
+            });
+            return await response.json();
+        } catch (error) {
+            console.error('Error saving stats:', error);
+            return false;
+        }
+    }
+
+    // Update display with current stats
+    function updateDisplay(userLiked, userDisliked) {
+        if (viewSpan) viewSpan.textContent = currentStats.views;
+        if (likeSpan) likeSpan.textContent = currentStats.likes;
+        if (dislikeSpan) dislikeSpan.textContent = currentStats.dislikes;
+        
+        if (likeBtn) {
+            if (userLiked) {
+                likeBtn.classList.add('liked');
+            } else {
+                likeBtn.classList.remove('liked');
+            }
+        }
+        
+        if (dislikeBtn) {
+            if (userDisliked) {
+                dislikeBtn.classList.add('disliked');
+            } else {
+                dislikeBtn.classList.remove('disliked');
+            }
+        }
+    }
+
+    // Handle like action
+    async function handleLike() {
+        const userLiked = localStorage.getItem(`user_liked_${currentSrc}`) === 'true';
+        const userDisliked = localStorage.getItem(`user_disliked_${currentSrc}`) === 'true';
+        
+        if (userLiked) {
+            // Unlike
+            currentStats.likes--;
+            localStorage.setItem(`user_liked_${currentSrc}`, 'false');
+            updateDisplay(false, userDisliked);
+        } else {
+            // Like
+            if (userDisliked) {
+                currentStats.dislikes--;
+                localStorage.setItem(`user_disliked_${currentSrc}`, 'false');
+            }
+            currentStats.likes++;
+            localStorage.setItem(`user_liked_${currentSrc}`, 'true');
+            updateDisplay(true, false);
+            
             if (likeBtn) {
                 likeBtn.style.animation = 'pulse 0.5s ease';
                 setTimeout(() => likeBtn.style.animation = '', 500);
             }
         }
-        saveStats(currentSrc);
-        updateDisplay();
-    };
-
-    const handleDislike = () => {
-        const s = stats[currentSrc];
-        if (!s) return;
         
-        if (s.userDisliked) {
-            s.dislikes--;
-            s.userDisliked = false;
+        await saveStatsToCloud();
+    }
+
+    // Handle dislike action
+    async function handleDislike() {
+        const userLiked = localStorage.getItem(`user_liked_${currentSrc}`) === 'true';
+        const userDisliked = localStorage.getItem(`user_disliked_${currentSrc}`) === 'true';
+        
+        if (userDisliked) {
+            // Undislike
+            currentStats.dislikes--;
+            localStorage.setItem(`user_disliked_${currentSrc}`, 'false');
+            updateDisplay(userLiked, false);
         } else {
-            if (s.userLiked) {
-                s.likes--;
-                s.userLiked = false;
-                if (likeBtn) likeBtn.classList.remove('liked');
+            // Dislike
+            if (userLiked) {
+                currentStats.likes--;
+                localStorage.setItem(`user_liked_${currentSrc}`, 'false');
             }
-            s.dislikes++;
-            s.userDisliked = true;
+            currentStats.dislikes++;
+            localStorage.setItem(`user_disliked_${currentSrc}`, 'true');
+            updateDisplay(false, true);
+            
             if (dislikeBtn) {
                 dislikeBtn.style.animation = 'shake 0.3s ease';
                 setTimeout(() => dislikeBtn.style.animation = '', 300);
             }
         }
-        saveStats(currentSrc);
-        updateDisplay();
-    };
+        
+        await saveStatsToCloud();
+    }
 
-    const openModal = (img) => {
+    // Open modal and load stats
+    async function openModal(img) {
         currentSrc = img.src;
         modal.style.display = 'block';
         modalImg.src = currentSrc;
         if (captionEl) captionEl.textContent = img.alt || '';
         
-        const s = getStats(currentSrc);
-        s.views++;
-        saveStats(currentSrc);
-        updateDisplay();
+        // Load stats from cloud
+        await loadStatsFromCloud(currentSrc);
+        
+        // Increment view count
+        currentStats.views++;
+        await saveStatsToCloud();
+        updateDisplay(
+            localStorage.getItem(`user_liked_${currentSrc}`) === 'true',
+            localStorage.getItem(`user_disliked_${currentSrc}`) === 'true'
+        );
+        
         document.body.style.overflow = 'hidden';
-    };
+    }
 
-    const closeModal = () => {
+    function closeModal() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-    };
+    }
 
     const onClick = function() { openModal(this); };
 
