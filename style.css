@@ -1608,3 +1608,206 @@ body.dark-mode .floating-icon {
         display: none;
     }
 }
+
+/* ========================================
+   COMMUNITY INVOLVEMENT SECTION
+   ======================================== */
+.community {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.community-card {
+    background: white;
+    border-radius: 28px;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.community-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.community-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2.5rem;
+    opacity: 0.15;
+}
+
+.community-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.org-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+.org-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.community-location {
+    color: #3498db;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.community-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a2a3a;
+}
+
+.community-details p {
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.community-impact h4 {
+    color: #2c3e50;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.community-impact ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.community-impact li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.community-impact li i {
+    color: #27ae60;
+    margin-top: 3px;
+}
+
+.community-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.community-stats .stat {
+    text-align: center;
+}
+
+.community-stats .stat-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #3498db;
+}
+
+.community-stats .stat-desc {
+    font-size: 0.7rem;
+    color: #718096;
+}
+
+.community-mission {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 2rem;
+    border-radius: 28px;
+    color: white;
+    position: relative;
+}
+
+.community-mission i:first-child {
+    font-size: 2rem;
+    opacity: 0.5;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.community-mission p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.community-mission i:last-child {
+    font-size: 2rem;
+    opacity: 0.5;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Dark mode for community section */
+body.dark-mode .community {
+    background: linear-gradient(135deg, #1a2a3a 0%, #16213e 100%);
+}
+
+body.dark-mode .community-card {
+    background: #0f0f1a;
+}
+
+body.dark-mode .org-name {
+    color: #e2e8f0;
+}
+
+body.dark-mode .community-title {
+    color: #e2e8f0;
+}
+
+body.dark-mode .community-details p,
+body.dark-mode .community-impact li {
+    color: #a0aec0;
+}
+
+@media (max-width: 768px) {
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .community-stats {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    
+    .community-mission p {
+        font-size: 0.95rem;
+    }
+}
