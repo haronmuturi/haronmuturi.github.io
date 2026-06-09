@@ -1618,41 +1618,30 @@ body.dark-mode .floating-icon {
 
 .community-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .community-card {
     background: white;
-    border-radius: 28px;
+    border-radius: 24px;
     padding: 1.8rem;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     position: relative;
-    overflow: hidden;
 }
 
 .community-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.community-icon {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 2.5rem;
-    opacity: 0.15;
 }
 
 .community-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
+    gap: 15px;
+    margin-bottom: 0.5rem;
 }
 
 .org-logo {
@@ -1660,11 +1649,10 @@ body.dark-mode .floating-icon {
     height: 50px;
     border-radius: 12px;
     object-fit: cover;
-    background: #f0f0f0;
 }
 
 .org-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #2c3e50;
 }
@@ -1672,32 +1660,31 @@ body.dark-mode .floating-icon {
 .community-location {
     color: #3498db;
     font-size: 0.85rem;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
 .community-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 1rem;
     color: #1a2a3a;
 }
 
 .community-details p {
     color: #4a5568;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 .community-impact h4 {
-    color: #2c3e50;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
     margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    color: #2c3e50;
 }
 
 .community-impact ul {
@@ -1706,75 +1693,79 @@ body.dark-mode .floating-icon {
 }
 
 .community-impact li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.7rem;
     display: flex;
     align-items: flex-start;
     gap: 10px;
     color: #4a5568;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .community-impact li i {
     color: #27ae60;
     margin-top: 3px;
+    flex-shrink: 0;
 }
 
-.community-stats {
+/* Stats Row - Full Width */
+.community-stats-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e2e8f0;
+    gap: 1rem;
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.community-stats .stat {
+.stat-box {
+    flex: 1;
+    min-width: 100px;
     text-align: center;
+    padding: 0.5rem;
 }
 
-.community-stats .stat-value {
+.stat-number {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: #3498db;
+    line-height: 1.2;
 }
 
-.community-stats .stat-desc {
-    font-size: 0.7rem;
+.stat-label {
+    display: block;
+    font-size: 0.65rem;
     color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.community-mission {
+/* Biblical Quotation - Simple Text (No Card) */
+.community-quote {
     text-align: center;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    padding: 2rem;
-    border-radius: 28px;
-    color: white;
-    position: relative;
+    padding: 1.5rem 0;
 }
 
-.community-mission i:first-child {
-    font-size: 2rem;
-    opacity: 0.5;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.community-mission p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    max-width: 700px;
-    margin: 0 auto;
+.quote-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto 0.5rem;
+    color: #2c3e50;
     font-style: italic;
+    font-weight: 500;
 }
 
-.community-mission i:last-child {
-    font-size: 2rem;
-    opacity: 0.5;
-    display: block;
-    margin-top: 0.5rem;
+.quote-source {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-top: 0;
 }
 
-/* Dark mode for community section */
+/* Dark Mode */
 body.dark-mode .community {
     background: linear-gradient(135deg, #1a2a3a 0%, #16213e 100%);
 }
@@ -1783,11 +1774,9 @@ body.dark-mode .community-card {
     background: #0f0f1a;
 }
 
-body.dark-mode .org-name {
-    color: #e2e8f0;
-}
-
-body.dark-mode .community-title {
+body.dark-mode .org-name,
+body.dark-mode .community-title,
+body.dark-mode .community-impact h4 {
     color: #e2e8f0;
 }
 
@@ -1796,18 +1785,53 @@ body.dark-mode .community-impact li {
     color: #a0aec0;
 }
 
-@media (max-width: 768px) {
+body.dark-mode .community-stats-row {
+    background: #0f0f1a;
+}
+
+body.dark-mode .stat-number {
+    color: #ffd700;
+}
+
+body.dark-mode .stat-label {
+    color: #a0aec0;
+}
+
+body.dark-mode .quote-text {
+    color: #e2e8f0;
+}
+
+body.dark-mode .quote-source {
+    color: #a0aec0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
     .community-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
-    .community-stats {
-        flex-direction: column;
-        gap: 0.8rem;
-        align-items: center;
+    .community-stats-row {
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
-    .community-mission p {
-        font-size: 0.95rem;
+    .stat-box {
+        min-width: 130px;
+    }
+    
+    .quote-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .stat-box {
+        min-width: calc(50% - 1rem);
+    }
+    
+    .community-quote {
+        padding: 1rem 0;
     }
 }
