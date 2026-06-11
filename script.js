@@ -9,18 +9,16 @@
  * 2. PROGRESS BAR
  * 3. BACK TO TOP BUTTON
  * 4. DARK MODE TOGGLE
- * 5. MOBILE MENU (Hamburger)
+ * 5. MOBILE MENU (Hamburger - Slide from Right)
  * 6. SMOOTH SCROLLING
  * 7. SCROLL SPY (Active Nav Link)
  * 8. IMAGE VIEWER MODAL
  * 9. IMAGE UPLOAD
  * 10. CONTACT FORM (Web3Forms)
- * 11. NEWSLETTER FORM (Web3Forms)
- * 12. LAZY LOADING & SCROLL REVEAL
- * 13. ROTATING ROLES
- * 14. CLICKABLE PROFILE PICTURE
- * 15. TESTIMONIALS ANIMATION
- * 16. INITIALIZATION
+ * 11. LAZY LOADING & SCROLL REVEAL
+ * 12. ROTATING ROLES
+ * 13. CLICKABLE PROFILE PICTURE
+ * 14. INITIALIZATION
  * ========================================
  */
 
@@ -94,27 +92,43 @@
 })();
 
 // ========================================
-// 5. MOBILE MENU (Hamburger)
+// 5. MOBILE MENU (Slide from Right)
 // ========================================
-(function initMobileMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    if (!hamburger || !navLinks) return;
+const mobileMenu = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('.nav-menu');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+if (mobileMenu && navMenu) {
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-
-    navLinks.querySelectorAll('a').forEach(link => {
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
         });
     });
-})();
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
 
 // ========================================
 // 6. SMOOTH SCROLLING
@@ -139,7 +153,7 @@
 // ========================================
 (function initScrollSpy() {
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav-link');
     if (!sections.length) return;
 
     function updateActiveLink() {
@@ -237,7 +251,6 @@
         if (likeBtn) {
             userLiked ? likeBtn.classList.add('liked') : likeBtn.classList.remove('liked');
         }
-        
         if (dislikeBtn) {
             userDisliked ? dislikeBtn.classList.add('disliked') : dislikeBtn.classList.remove('disliked');
         }
@@ -420,54 +433,7 @@ window.uploadImage = function(galleryId) {
 })();
 
 // ========================================
-// 11. NEWSLETTER FORM (Web3Forms)
-// ========================================
-(function initNewsletterForm() {
-    const form = document.getElementById('newsletterForm');
-    if (!form) return;
-
-    const newForm = form.cloneNode(true);
-    form.parentNode.replaceChild(newForm, form);
-    
-    newForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const btn = newForm.querySelector('button');
-        const originalHtml = btn?.innerHTML || 'Subscribe';
-        
-        if (btn) {
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
-        }
-
-        try {
-            const formData = new FormData(newForm);
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-            const data = await response.json();
-            
-            if (data.success) {
-                alert('✅ Successfully subscribed! Thank you.');
-                newForm.reset();
-            } else {
-                throw new Error(data.message || 'Failed to subscribe');
-            }
-        } catch (error) {
-            console.error('Newsletter error:', error);
-            alert('❌ Failed to subscribe. Please try again.');
-        }
-        
-        if (btn) {
-            btn.disabled = false;
-            btn.innerHTML = originalHtml;
-        }
-    });
-})();
-
-// ========================================
-// 12. LAZY LOADING & SCROLL REVEAL
+// 11. LAZY LOADING & SCROLL REVEAL
 // ========================================
 (function initLazyAndReveal() {
     if ('IntersectionObserver' in window) {
@@ -482,7 +448,7 @@ window.uploadImage = function(galleryId) {
         });
         lazyImages.forEach(img => imageObserver.observe(img));
         
-        const revealElements = document.querySelectorAll('.exp-card, .achievement-card, .blog-post, .skill, .testimonial-card');
+        const revealElements = document.querySelectorAll('.exp-card, .achievement-card, .skills-card, .community-card');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -503,7 +469,7 @@ window.uploadImage = function(galleryId) {
 })();
 
 // ========================================
-// 13. ROTATING ROLES
+// 12. ROTATING ROLES
 // ========================================
 const roles = [
     "Civil Engineer", 
@@ -529,7 +495,7 @@ if (roleElement) {
 }
 
 // ========================================
-// 14. CLICKABLE PROFILE PICTURE
+// 13. CLICKABLE PROFILE PICTURE
 // ========================================
 (function initProfileClick() {
     const profileContainer = document.getElementById('profileClickable');
@@ -569,53 +535,23 @@ if (roleElement) {
     }
     
     closeBtn.addEventListener('click', closeModal);
-    
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
-    
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
     });
 })();
 
 // ========================================
-// 15. TESTIMONIALS ANIMATION
-// ========================================
-(function initTestimonials() {
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    if (!testimonials.length) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    testimonials.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-        observer.observe(card);
-    });
-})();
-
-// ========================================
-// 16. INITIALIZATION
+// 14. INITIALIZATION
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    
+    // Close mobile menu on window resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && navLinks?.classList.contains('active')) {
-            hamburger?.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        if (window.innerWidth > 768 && navMenu?.classList.contains('active')) {
+            mobileMenu?.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
 });
