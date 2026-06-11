@@ -45,28 +45,26 @@
     ======================================== -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="#" class="logo">
                 <div class="profile-clickable" id="profileClickable">
-                    <img src="images/profilephoto.png" alt="Haron Muturi Profile" class="nav-profile-photo" id="nav-photo" loading="lazy">
+                    <img src="images/profilephoto.png" alt="Haron Muturi" class="nav-profile-photo">
                 </div>
                 <span>Haron Muturi</span>
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
             
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about">Profile Summary</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#blog">Favourite Blogs</a></li>
-                <li><a href="#downloads-section">Downloads</a></li>
-                <li><a href="#contact">Let's Talk</a></li>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">Profile</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -75,25 +73,17 @@
          HERO SECTION
     ======================================== -->
     <section class="hero">
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
+        <div class="hero-card">
             <div class="hero-badge">
-                <span class="badge-icon">👋</span>
-                <span class="badge-text">Welcome to my portfolio</span>
+                <span>Civil Engineer</span>
             </div>
             
-            <h1 class="hero-title">
-                <span class="title-first">Haron</span>
-                <span class="title-last">Muturi</span>
-            </h1>
+            <h1 class="hero-title">Haron Muturi</h1>
             
-            <div class="hero-role-container">
-                <div class="role-wrapper">
-                    <span class="role-prefix">✦</span>
-                    <span class="role-text" id="rotatingRole">Civil Engineer</span>
-                    <span class="role-suffix">✦</span>
-                </div>
+            <div class="hero-role">
+                <span>✦</span>
+                <span id="rotatingRole">Civil Engineer</span>
+                <span>✦</span>
             </div>
             
             <p class="hero-description">
@@ -102,24 +92,18 @@
             
             <div class="hero-stats">
                 <div class="stat-item">
-                    <div class="stat-info">
-                        <span class="stat-number" data-target="3">3.0+</span>
-                        <span class="stat-label">Years of Experience</span>
-                    </div>
+                    <span class="stat-number">3.0+</span>
+                    <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-info">
-                        <span class="stat-number" data-target="4">4+</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
+                    <span class="stat-number">4+</span>
+                    <span class="stat-label">Projects Completed</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-info">
-                        <span class="stat-number" data-target="100">96%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
+                    <span class="stat-number">96%</span>
+                    <span class="stat-label">Client Satisfaction</span>
                 </div>
             </div>
             
@@ -129,32 +113,35 @@
                     <i class="fas fa-arrow-right"></i>
                 </a>
                 <a href="#experience" class="cta-secondary">
-                    <i class="fas fa-play-circle"></i>
-                    <span>My Work...</span>
+                    <span>View My Work</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                <a href="downloads/HARON_MUTURI_CV.pdf" download class="cta-cv">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>My CV/Resume</span>
                 </a>
             </div>
-            
-            <p class="hero-note">
-                <i class="fas fa-camera"></i> Connecting Communities Through Sustainable Infrastructure
-            </p>
         </div>
         
         <div class="hero-scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
             <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- ========================================
-         ABOUT SECTION
+         PROFILE SUMMARY SECTION
     ======================================== -->
     <section id="about" class="about">
         <div class="container">
             <h2>Profile Summary</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>A dedicated Civil Engineer with 2+ years of progressive experience in building construction, site supervision, and infrastructure development. Proven track record in the successful commissioning of the Chuka Modern Market, a multi-million shilling Affordable Housing Program project under the State Department of Housing & Urban Development. Skilled in designing and supervising civil works including drainage systems, roads, and water supply networks. Proficient in reading engineering drawings, structural detailing, materials testing, and quality control procedures. Experienced in engineering surveys, setting out, levelling, and using AutoCAD for design support.</p>
-                    <p>Throughout my career, I have worked on diverse projects ranging from water pipeline installations at MEWASSCO to box culvert construction for the Kenya Rural Roads Authority (KeRRA). My technical expertise includes BOQ review, progress reporting, compliance monitoring, and ensuring adherence to design standards and specifications. I am passionate about building sustainable infrastructure that makes a real difference in communities, and I bring strong team collaboration, communication, and problem-solving skills to every project I undertake.</p>
+                    <h3>The Beginning of My Civil Engineering Career</h3>
+                    <p>My journey into civil engineering began with a childhood fascination for bridges, roads, and buildings—wondering how massive structures stand firm against nature's forces. This curiosity drove me to pursue a Bachelor of Science in Civil Engineering at Jomo Kenyatta University of Agriculture and Technology (JKUAT), where I graduated with Second Class Honors - Upper Division. My industrial attachments at Kenya Rural Roads Authority (KeRRA) and Meru Water & Sewerage Services (MEWASSCO) gave me my first real taste of engineering—checking levels during culvert backfilling, supervising box culvert construction, and conducting materials testing in the laboratory. These experiences taught me that engineering is not just about calculations; it's about building things that serve communities and stand the test of time.</p>
+                    
+                    <h3>Behold the Engineering Passion</h3>
+                    <p>Today, as a Civil Engineer with the State Department of Housing & Urban Development, I am actively involved in designing and supervising civil works for the Chuka Modern Market—a flagship Affordable Housing Program project. From drainage systems and road networks to water supply and structural detailing, every day brings a new challenge. I have also worked with PalmLand Surveys & Contractors Ltd, where I honed my skills in engineering surveys, data analysis, and technical reporting. Beyond the technical side, I believe engineering is a calling to solve problems, improve lives, and leave a lasting impact. Whether it's ensuring quality control on site or mentoring young engineers, I bring passion, integrity, and excellence to everything I do.</p>
                 </div>
                 <div class="about-gallery">
                     <h3><i class="fas fa-images"></i> Project Gallery</h3>
@@ -178,9 +165,15 @@
             
             <!-- Experience Card 1 -->
             <div class="exp-card">
-                <div class="exp-gallery">
-                    <h3><i class="fas fa-building"></i> Civil Engineer - State Department of Housing & Urban Development</h3>
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <i class="fas fa-building"></i>
+                        <h3>Civil Engineer - State Department of Housing & Urban Development</h3>
+                    </div>
                     <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2026 - Present | Chuka Modern Market, Tharaka Nithi County</p>
+                    <p class="exp-role-description">Responsible for overseeing the design and construction of the Chuka Modern Market, a flagship Affordable Housing Program project. This role involves coordinating with contractors, ensuring quality standards, and reporting to senior engineers on project progress and challenges.</p>
+                </div>
+                <div class="exp-gallery">
                     <div class="gallery-grid" id="exp1-gallery">
                         <div class="gallery-item"><img src="images/chuka/chuka1.jpg" alt="Chuka Market Construction Front, 2026" loading="lazy"></div>
                         <div class="gallery-item"><img src="images/chuka/chuka2.jpeg" alt="Chuka Modern Market Exterior View" loading="lazy"></div>
@@ -189,21 +182,30 @@
                     </div>
                 </div>
                 <div class="exp-content">
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Designing and supervising civil works (drainage, roads, water supply); review drawings and BOQs.</li>
-                        <li><i class="fas fa-check-circle"></i> Designing and reviewing structural systems; assist in steel/concrete detailing, site inspections.</li>
-                        <li><i class="fas fa-check-circle"></i> Supporting senior engineers in structural drafting, calculations, and supervision of foundation works.</li>
-                        <li><i class="fas fa-check-circle"></i> Inspecting building construction for code compliance, structural integrity, and material use.</li>
-                        <li><i class="fas fa-check-circle"></i> Supervising civil works implementation, adherence to specifications and site reporting.</li>
-                    </ul>
+                    <div class="exp-responsibilities">
+                        <h4><i class="fas fa-tasks"></i> Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Civil Works Supervision</strong><span>Design and supervise drainage systems, roads, and water supply networks. Review engineering drawings and BOQs to ensure all civil works comply with approved designs and specifications.</span></li>
+                            <li><strong>Structural Systems Design</strong><span>Design and review structural systems including foundations, columns, beams, and slabs. Assist in steel and concrete detailing while conducting regular site inspections to verify structural integrity.</span></li>
+                            <li><strong>Foundation Works Support</strong><span>Support senior engineers in structural drafting, complex calculations, and supervision of foundation construction. Ensure proper excavation, reinforcement placement, and concrete pouring procedures are followed.</span></li>
+                            <li><strong>Quality Assurance & Compliance</strong><span>Inspect building construction for code compliance, structural integrity, and proper material usage. Document any deviations and recommend corrective actions to maintain quality standards.</span></li>
+                            <li><strong>Project Reporting & Site Management</strong><span>Supervise daily civil works implementation and prepare comprehensive site reports. Ensure all activities adhere to project specifications, safety protocols, and contractual obligations.</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
             <!-- Experience Card 2 -->
             <div class="exp-card">
-                <div class="exp-gallery">
-                    <h3><i class="fas fa-drafting-compass"></i> Civil & Survey Works Intern - PalmLand Surveys & Contractors Ltd</h3>
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <i class="fas fa-drafting-compass"></i>
+                        <h3>Civil & Survey Works Intern - PalmLand Surveys & Contractors Ltd</h3>
+                    </div>
                     <p class="exp-date"><i class="far fa-calendar-alt"></i> Nov 2024 - Dec 2025 | Thika</p>
+                    <p class="exp-role-description">Gained hands-on experience in engineering surveys, data collection, and technical reporting for infrastructure projects. Worked closely with survey teams to ensure accuracy in setting out and leveling for construction works.</p>
+                </div>
+                <div class="exp-gallery">
                     <div class="gallery-grid" id="exp2-gallery">
                         <div class="gallery-item"><img src="images/palmland/palm1.jpg" alt="Leveling Using Theodolite" loading="lazy"></div>
                         <div class="gallery-item"><img src="images/palmland/palm2.jpeg" alt="Project Planning Session" loading="lazy"></div>
@@ -212,21 +214,30 @@
                     </div>
                 </div>
                 <div class="exp-content">
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Collected, validated, and analyzed field data to support reporting accuracy and decision-making.</li>
-                        <li><i class="fas fa-check-circle"></i> Prepared analytical and technical reports aligned with compliance and documentation standards.</li>
-                        <li><i class="fas fa-check-circle"></i> Conducted data analysis using Microsoft Excel to identify inconsistencies and trends.</li>
-                        <li><i class="fas fa-check-circle"></i> Supported documentation review processes to ensure completeness and accuracy.</li>
-                        <li><i class="fas fa-check-circle"></i> Assisted in compliance monitoring of construction activities against specifications.</li>
-                    </ul>
+                    <div class="exp-responsibilities">
+                        <h4><i class="fas fa-tasks"></i> Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Field Data Collection & Analysis</strong><span>Collected, validated, and analyzed field survey data to support accurate reporting and informed decision-making. Used systematic approaches to identify data inconsistencies and ensure reliability.</span></li>
+                            <li><strong>Technical Report Preparation</strong><span>Prepared analytical and technical reports aligned with compliance standards and project documentation requirements. These reports informed project stakeholders on survey findings and progress.</span></li>
+                            <li><strong>Excel Data Analysis</strong><span>Utilized Microsoft Excel to organize survey data, identify trends, and detect inconsistencies. Created data visualizations that helped senior engineers interpret complex survey results.</span></li>
+                            <li><strong>Documentation Review</strong><span>Supported documentation review processes to ensure completeness, accuracy, and compliance with project specifications. Assisted in maintaining organized project files and records.</span></li>
+                            <li><strong>Compliance Monitoring</strong><span>Assisted in monitoring construction activities against approved specifications and design standards. Identified deviations and reported them to supervisors for timely corrective action.</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- Experience Card 3 -->
             <div class="exp-card">
-                <div class="exp-gallery">
-                    <h3><i class="fas fa-water"></i> Civil Engineering Attachee - Meru Water & Sewerage Services Co. (MEWASSCO)</h3>
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <i class="fas fa-water"></i>
+                        <h3>Civil Engineering Attachee - Meru Water & Sewerage Services Co. (MEWASSCO)</h3>
+                    </div>
                     <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2024 - Apr 2024 | Meru County</p>
+                    <p class="exp-role-description">Attached to the water and sewerage services company, gaining practical exposure to water infrastructure projects. Participated in pipeline installation, system inspections, and water quality monitoring activities across Meru County.</p>
+                </div>
+                <div class="exp-gallery">
                     <div class="gallery-grid" id="exp3-gallery">
                         <div class="gallery-item"><img src="images/mewassco/mewass2.jpg" alt="MEWASSCO LTD Office" loading="lazy"></div>
                         <div class="gallery-item"><img src="images/mewassco/mewass1.jpeg" alt="Water Pipeline Installation at Meru Makutano" loading="lazy"></div>
@@ -235,21 +246,30 @@
                     </div>
                 </div>
                 <div class="exp-content">
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Assisted in inspection, installation, and maintenance of water distribution pipelines.</li>
-                        <li><i class="fas fa-check-circle"></i> Participated in field surveys and levelling works for pipeline alignment.</li>
-                        <li><i class="fas fa-check-circle"></i> Supported system inspections and intake assessments for hydraulics and stormwater management.</li>
-                        <li><i class="fas fa-check-circle"></i> Conducted water quality monitoring and data collection for environmental compliance.</li>
-                        <li><i class="fas fa-check-circle"></i> Assisted in asset inspections and preparation of field reports for road asset management.</li>
-                    </ul>
+                    <div class="exp-responsibilities">
+                        <h4><i class="fas fa-tasks"></i> Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Pipeline Inspection & Installation</strong><span>Assisted in the inspection, installation, and maintenance of water distribution pipelines across Meru County. Gained practical understanding of underground utility networks and road drainage integration.</span></li>
+                            <li><strong>Field Surveys & Levelling</strong><span>Participated in field surveys and leveling works to determine pipeline alignment and gradient. Used surveying equipment to ensure accurate placement of water infrastructure.</span></li>
+                            <li><strong>Hydraulics & Stormwater Assessment</strong><span>Supported system inspections and intake assessments, strengthening knowledge of hydraulics, flow rates, and stormwater management principles. Contributed to infrastructure improvement recommendations.</span></li>
+                            <li><strong>Water Quality Monitoring</strong><span>Conducted water quality monitoring and data collection to ensure environmental compliance and public health standards. Documented findings and assisted in preparing compliance reports.</span></li>
+                            <li><strong>Asset Inspection & Field Reporting</strong><span>Assisted in asset inspections and preparation of detailed field reports for road and water asset management. These reports informed maintenance planning and infrastructure upgrades.</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
             <!-- Experience Card 4 -->
             <div class="exp-card">
-                <div class="exp-gallery">
-                    <h3><i class="fas fa-road"></i> Civil Engineering Attachee - Kenya Rural Roads Authority (KeRRA)</h3>
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <i class="fas fa-road"></i>
+                        <h3>Civil Engineering Attachee - Kenya Rural Roads Authority (KeRRA)</h3>
+                    </div>
                     <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2023 - Apr 2023 | Laare-Ndumuru Road, Meru County</p>
+                    <p class="exp-role-description">Worked on the Laare-Ndumuru Road Project, gaining experience in road construction supervision and materials testing. Participated in culvert construction, quality control, and laboratory testing of construction materials.</p>
+                </div>
+                <div class="exp-gallery">
                     <div class="gallery-grid" id="exp4-gallery">
                         <div class="gallery-item"><img src="images/laare_ndumuru/laare1.jpg" alt="Leveling Road Section using Dumpy Level" loading="lazy"></div>
                         <div class="gallery-item"><img src="images/laare_ndumuru/laare2.jpeg" alt="Box Culvert Construction, 2023" loading="lazy"></div>
@@ -258,11 +278,77 @@
                     </div>
                 </div>
                 <div class="exp-content">
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Assisted in checking levels during backfilling of culvert sections.</li>
-                        <li><i class="fas fa-check-circle"></i> Supervised box culvert and access pipe culvert construction according to design standards.</li>
-                        <li><i class="fas fa-check-circle"></i> Performed materials testing including Atterberg limits and sieve analysis in the laboratory.</li>
-                    </ul>
+                    <div class="exp-responsibilities">
+                        <h4><i class="fas fa-tasks"></i> Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Culvert Construction Supervision</strong><span>Assisted in checking levels during backfilling of culvert sections to ensure proper drainage and structural stability. Learned proper construction sequencing for box and pipe culverts.</span></li>
+                            <li><strong>Quality Control & Standards Compliance</strong><span>Supervised box culvert and access pipe culvert construction to ensure compliance with design standards and KeRRA specifications. Ensured proper reinforcement placement and concrete quality.</span></li>
+                            <li><strong>Materials Testing (Laboratory)</strong><span>Performed materials testing including Atterberg limits for soil classification and sieve analysis for aggregate grading. These tests ensured construction materials met required quality standards.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SKILLS SECTION
+    ======================================== -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2><i class="fas fa-cogs"></i> Skills & Competencies</h2>
+            <div class="skills-grid-container">
+                <!-- Technical Skills -->
+                <div class="skills-card">
+                    <div class="skills-card-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Technical Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item"><i class="fas fa-hard-hat"></i><span>Site Supervision</span></div>
+                        <div class="skill-item"><i class="fas fa-vial"></i><span>Quality Control & Testing</span></div>
+                        <div class="skill-item"><i class="fas fa-drafting-compass"></i><span>Engineering Drawings Preparation</span></div>
+                        <div class="skill-item"><i class="fas fa-ruler"></i><span>Setting Out & Levelling</span></div>
+                        <div class="skill-item"><i class="fas fa-water"></i><span>Drainage Systems Installation & Inspection</span></div>
+                        <div class="skill-item"><i class="fas fa-road"></i><span>Road Construction Works & Procedures</span></div>
+                        <div class="skill-item"><i class="fas fa-faucet"></i><span>Water Pipeline Installation</span></div>
+                        <div class="skill-item"><i class="fas fa-building"></i><span>Structural Detailing of Structures</span></div>
+                        <div class="skill-item"><i class="fas fa-file-invoice-dollar"></i><span>BOQ Preparation & Reviewing</span></div>
+                        <div class="skill-item"><i class="fas fa-chart-line"></i><span>Progress Monitoring, Evaluation & Reporting</span></div>
+                        <div class="skill-item"><i class="fas fa-flask"></i><span>Materials Testing</span></div>
+                    </div>
+                </div>
+                
+                <!-- Software & Tools -->
+                <div class="skills-card">
+                    <div class="skills-card-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Software & Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item"><i class="fas fa-cube"></i><span>AutoCAD</span></div>
+                        <div class="skill-item"><i class="fas fa-file-excel"></i><span>Microsoft Excel (Data Analysis)</span></div>
+                        <div class="skill-item"><i class="fas fa-globe"></i><span>RTK & Theodolite</span></div>
+                        <div class="skill-item"><i class="fas fa-building"></i><span>Protastructure</span></div>
+                        <div class="skill-item"><i class="fas fa-chalkboard"></i><span>MS Office Suite</span></div>
+                        <div class="skill-item"><i class="fas fa-cubes"></i><span>Revit</span></div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="skills-card">
+                    <div class="skills-card-header">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item"><i class="fas fa-users"></i><span>Team Collaboration</span></div>
+                        <div class="skill-item"><i class="fas fa-comments"></i><span>Communication</span></div>
+                        <div class="skill-item"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
+                        <div class="skill-item"><i class="fas fa-clipboard-list"></i><span>Compliance Monitoring</span></div>
+                        <div class="skill-item"><i class="fas fa-check-double"></i><span>Quality Assurance</span></div>
+                        <div class="skill-item"><i class="fas fa-file-alt"></i><span>Report Writing</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -274,263 +360,118 @@
     <section id="achievements" class="achievements">
         <div class="container">
             <h2><i class="fas fa-trophy"></i> Achievements & Certifications</h2>
-            <div class="achievement-grid">
+            <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="gallery-item"><img src="images/achievements/chuka1.jpg" alt="Chuka Modern Market Commissioning" loading="lazy"></div>
-                    <div class="achievement-year"><i class="far fa-calendar-alt"></i> April 2026</div>
-                    <p class="achievement-title"><i class="fas fa-city"></i> Construction of Chuka Modern Market</p>
-                    <p class="achievement-description">Proud to be part of the team that successfully delivered and commissioned a multi-million shilling infrastructure project under the State Department of Housing & Urban Development Affordable Housing Program.</p>
+                    <div class="achievement-header">
+                        <div class="achievement-icon"><i class="fas fa-city"></i></div>
+                        <div class="achievement-title-wrap">
+                            <h3>Construction of Chuka Modern Market</h3>
+                            <p class="achievement-year"><i class="far fa-calendar-alt"></i> April 2026</p>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <p>Proud to be part of the team that successfully delivered and commissioned a multi-million shilling infrastructure project under the State Department of Housing & Urban Development Affordable Housing Program.</p>
+                    </div>
                 </div>
                 
                 <div class="achievement-card">
-                    <div class="gallery-item"><img src="images/achievements/graduationphoto.JPG" alt="JKUAT Graduation 2025" loading="lazy"></div>
-                    <div class="achievement-year"><i class="far fa-calendar-alt"></i> June 2025</div>
-                    <p class="achievement-title"><i class="fas fa-graduation-cap"></i> B.Sc Civil Engineering</p>
-                    <p class="achievement-description">Graduated from Jomo Kenyatta University of Agriculture and Technology (JKUAT) with Second Class Honors - Upper Division.</p>
+                    <div class="achievement-header">
+                        <div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="achievement-title-wrap">
+                            <h3>B.Sc Civil Engineering</h3>
+                            <p class="achievement-year"><i class="far fa-calendar-alt"></i> June 2025</p>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <p>Graduated from Jomo Kenyatta University of Agriculture and Technology (JKUAT) with Second Class Honors - Upper Division.</p>
+                    </div>
                 </div>
                 
                 <div class="achievement-card">
-                    <div class="gallery-item"><img src="images/achievements/boxculvert.jpg" alt="Box Culvert Construction 2023" loading="lazy"></div>
-                    <div class="achievement-year"><i class="far fa-calendar-alt"></i> March 2023</div>
-                    <p class="achievement-title"><i class="fas fa-ruler-combined"></i> Box Culvert Construction Supervision</p>
-                    <p class="achievement-description">Supervised quality control and ensured compliance with design standards during box culvert and access pipe culvert construction on the Laare-Mudumuru Road Project for Kenya Rural Roads Authority (KeRRA).</p>
+                    <div class="achievement-header">
+                        <div class="achievement-icon"><i class="fas fa-ruler-combined"></i></div>
+                        <div class="achievement-title-wrap">
+                            <h3>Box Culvert Construction Supervision</h3>
+                            <p class="achievement-year"><i class="far fa-calendar-alt"></i> March 2023</p>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <p>Supervised quality control and ensured compliance with design standards during box culvert and access pipe culvert construction on the Laare-Mudumuru Road Project for Kenya Rural Roads Authority (KeRRA).</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
- <!-- ========================================
+    <!-- ========================================
          COMMUNITY INVOLVEMENT SECTION
     ======================================== -->
-<section id="community" class="community">
-    <div class="container">
-        <h2><i class="fas fa-hands-helping"></i> Community Development</h2>
-        
-        <div class="community-grid">
-            
-            <!-- Plan International Card -->
-            <div class="community-card">
-                <div class="community-icon">
-                 
-                </div>
-                <div class="community-logo">
-                    <img src="images/logos/plan-international-logo.png" alt="Plan International" class="org-logo">
-                    <span class="org-name">Plan International</span>
-                </div>
-                <p class="community-location"><i class="fas fa-map-marker-alt"></i> Tharaka North Subcounty</p>
-                <h3 class="community-title">Girl and Youth Rights Advocate</h3>
-                <div class="community-details">
-                    <p>As a passionate community advocate and a member of Wake and Shine, we collaborated with Plan International to champion the rights of children and youth in Tharaka North. Our work focused on creating safe spaces and opportunities for vulnerable populations, particularly young girls facing harmful cultural practices.</p>
-                    <div class="community-impact">
-                        <h4>Key Initiatives:</h4>
-                        <ul>
-                            <li><i class="fas fa-shield-alt"></i> <strong>Protection Against FGM:</strong> Led sensitization campaigns reaching 1,000+ community members, creating awareness against Female Genital Mutilation.</li>
-                            <li><i class="fas fa-users"></i> <strong>Alternative Rites of Passage:</strong> Coordinated safe transition ceremonies for 120 girls, celebrating their womanhood without cutting, "Ntanîra na Mûgambo"</li>
-                            <li><i class="fas fa-baby-carriage"></i> <strong>Preventing Early Pregnancies:</strong> Facilitated mentorship programs for school-going adolescent girls, providing SRHR education to 800+ young people.</li>
-                            <li><i class="fas fa-chalkboard-user"></i> <strong>Promoting Girl Child Education:</strong> Mobilized and sensitized local community leaders, parents, and elders on the importance of educating the girl child. Organized community barazas and dialogues that shifted cultural perceptions, leading to increased school enrollment and retention of girls in target areas.</li>
-                            <li><i class="fas fa-users"></i> <strong>Youth Empowerment:</strong> Organized vocational training workshops equipping 200+ youth with entrepreneurship and life skills.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Action Aid Card -->
-            <div class="community-card">
-                <div class="community-icon">
-                    
-                </div>
-                <div class="community-logo">
-                    <img src="images/logos/action-aid-logo.png" alt="Action Aid" class="org-logo">
-                    <span class="org-name">Action Aid</span>
-                </div>
-                <p class="community-location"><i class="fas fa-map-marker-alt"></i> Chuka Igamba Ng'ombe Subcounty</p>
-                <h3 class="community-title">Komesha FGM Sasa! Promoter</h3>
-                <div class="community-details">
-                    <p>As a member of Wake and Shine, we partnered with Action Aid to spearhead the "Komesha FGM Sasa!" project, a grassroots movement dedicated to eradicating Female Genital Mutilation and promoting gender equality in Chuka Igamba Ng'ombe.</p>
-                    <div class="community-impact">
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            <li><i class="fas fa-chalkboard"></i> <strong>Awareness Campaigns:</strong> Organized 25 community dialogue forums engaging religious leaders, elders, and parents on the dangers of FGM and early marriage.</li>
-                            <li><i class="fas fa-gavel"></i> <strong>Legal Literacy:</strong> Educated community members on the Prohibition of Female Genital Mutilation Act, empowering them to report violations.</li>
-                            <li><i class="fas fa-school"></i> <strong>School Outreach:</strong> Visited 18 primary and secondary schools, reaching 1,500 students with anti-FGM messaging and reproductive health information.</li>
-                            <li><i class="fas fa-chart-line"></i> <strong>Community Monitoring:</strong> Established 10 community watchdog groups trained to identify and report at-risk girls, leading to zero new FGM cases in 6 villages.</li>
-                            <li><i class="fas fa-ribbon"></i> <strong>Girl Child Education:</strong> Partnered with local school boards and parent associations to champion girls' enrollment and retention, addressing barriers such as early marriage and domestic responsibilities.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Community Stats Row - Full Width -->
-        <div class="community-stats-row">
-            <div class="stat-box">
-                <span class="stat-number">1,000+</span>
-                <span class="stat-label">Community Members Reached</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">200+</span>
-                <span class="stat-label">Girls Through Safe Passage</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">250+</span>
-                <span class="stat-label">Girls Supported to Stay in School</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">25+</span>
-                <span class="stat-label">Public Barazas</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">1,500+</span>
-                <span class="stat-label">Students Reached</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">10</span>
-                <span class="stat-label">Watchdog Groups Trained</span>
-            </div>
-        </div>
-        
-        <!-- Biblical Quotation - Simple Text (No Card) -->
-        <div class="community-quote">
-            <p class="quote-text">“Speak up for those who cannot speak for themselves, for the rights of all who are destitute. Speak up and judge fairly; defend the rights of the poor and needy.”</p>
-            <p class="quote-source">— Proverbs 31:8-9</p>
-        </div>
-    </div>
-</section>
-
-    <!-- ========================================
-         SKILLS SECTION
-    ======================================== -->
-    <section id="skills" class="skills">
+    <section id="community" class="community">
         <div class="container">
-            <h2><i class="fas fa-cogs"></i> Skills & Competencies</h2>
-            <div class="skills-showcase">
-                <div class="skills-category">
-                    <h3><i class="fas fa-tools"></i> Technical Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill"><i class="fas fa-hard-hat"></i> Site Supervision</div>
-                        <div class="skill"><i class="fas fa-vial"></i> Quality Control & Testing</div>
-                        <div class="skill"><i class="fas fa-drafting-compass"></i> Engineering Drawings Preparation</div>
-                        <div class="skill"><i class="fas fa-ruler"></i> Setting Out & Levelling structures</div>
-                        <div class="skill"><i class="fas fa-water"></i> Drainage Systems Installations and Inspection</div>
-                        <div class="skill"><i class="fas fa-road"></i> Road Construction works and Procedures</div>
-                        <div class="skill"><i class="fas fa-faucet"></i> Water Pipeline Installation</div>
-                        <div class="skill"><i class="fas fa-building"></i> Structural Detailing of Structures</div>
-                        <div class="skill"><i class="fas fa-file-invoice-dollar"></i> BOQ Preparation & Reviewing</div>
-                        <div class="skill"><i class="fas fa-chart-line"></i> Progress Monitoring, Evaluation & Reporting</div>
-                        <div class="skill"><i class="fas fa-flask"></i> Materials Testing</div>
+            <h2><i class="fas fa-hands-helping"></i> Community Development</h2>
+            
+            <div class="community-grid">
+                <!-- Plan International Card -->
+                <div class="community-card">
+                    <div class="community-logo">
+                        <img src="images/logos/plan-international-logo.png" alt="Plan International" class="org-logo">
+                        <span class="org-name">Plan International</span>
+                    </div>
+                    <p class="community-location"><i class="fas fa-map-marker-alt"></i> Tharaka North Subcounty</p>
+                    <h3 class="community-title">Girl and Youth Rights Advocate</h3>
+                    <div class="community-details">
+                        <p>As a passionate community advocate and a member of Wake and Shine, we collaborated with Plan International to champion the rights of children and youth in Tharaka North. Our work focused on creating safe spaces and opportunities for vulnerable populations, particularly young girls facing harmful cultural practices.</p>
+                        <div class="community-impact">
+                            <h4>Key Initiatives:</h4>
+                            <ul>
+                                <li><strong>Protection Against FGM:</strong><span>Led sensitization campaigns reaching 1,000+ community members, creating awareness against Female Genital Mutilation.</span></li>
+                                <li><strong>Alternative Rites of Passage:</strong><span>Coordinated safe transition ceremonies for 120 girls, celebrating their womanhood without cutting, "Ntanîra na Mûgambo".</span></li>
+                                <li><strong>Preventing Early Pregnancies:</strong><span>Facilitated mentorship programs for school-going adolescent girls, providing SRHR education to 800+ young people.</span></li>
+                                <li><strong>Promoting Girl Child Education:</strong><span>Mobilized and sensitized local community leaders, parents, and elders on the importance of educating the girl child. Organized community barazas and dialogues that shifted cultural perceptions, leading to increased school enrollment and retention of girls in target areas.</span></li>
+                                <li><strong>Youth Empowerment:</strong><span>Organized vocational training workshops equipping 200+ youth with entrepreneurship and life skills.</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="skills-category">
-                    <h3><i class="fas fa-laptop-code"></i> Software & Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill"><i class="fas fa-cube"></i> AutoCAD</div>
-                        <div class="skill"><i class="fas fa-file-excel"></i> Microsoft Excel Data Analysis</div>
-                        <div class="skill"><i class="fas fa-globe"></i> RTK & Theodolite</div>
-                        <div class="skill"><i class="fas fa-building"></i> Protastructure</div>
-                        <div class="skill"><i class="fas fa-chalkboard"></i> MS Office Suite</div>
-                        <div class="skill"><i class="fas fa-cubes"></i> Revit</div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3><i class="fas fa-handshake"></i> Soft Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill"><i class="fas fa-users"></i> Team Collaboration</div>
-                        <div class="skill"><i class="fas fa-comments"></i> Communication</div>
-                        <div class="skill"><i class="fas fa-lightbulb"></i> Problem Solving</div>
-                        <div class="skill"><i class="fas fa-clipboard-list"></i> Compliance Monitoring</div>
-                        <div class="skill"><i class="fas fa-check-double"></i> Quality Assurance</div>
-                        <div class="skill"><i class="fas fa-file-alt"></i> Report Writing</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ========================================
-         BLOG SECTION
-    ======================================== -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2><i class="fas fa-blog"></i> Favourite Blogs</h2>
-            
-            <div class="blog-post">
-                <div class="blog-gallery">
-                    <div class="gallery-grid" id="blog1-gallery">
-                        <div class="gallery-item"><img src="images/blogs/blog1.jpg" alt="Sustainable Construction" loading="lazy"></div>
+                <!-- Action Aid Card -->
+                <div class="community-card">
+                    <div class="community-logo">
+                        <img src="images/logos/action-aid-logo.png" alt="Action Aid" class="org-logo">
+                        <span class="org-name">Action Aid</span>
                     </div>
-                </div>
-                <div class="blog-content">
-                    <h3><i class="fas fa-leaf"></i> Sustainable Construction</h3>
-                    <p>Sustainable construction is revolutionizing the building industry. From eco-friendly materials to energy-efficient designs, discover how green building practices are reshaping our cities...</p>
-                    <a href="https://www.projectmanager.com/blog/sustainable-construction" target="_blank" rel="noopener noreferrer" class="read-more-link"><i class="fas fa-external-link-alt"></i> Read Full Article →</a>
+                    <p class="community-location"><i class="fas fa-map-marker-alt"></i> Chuka Igamba Ng'ombe Subcounty</p>
+                    <h3 class="community-title">Komesha FGM Sasa! Promoter</h3>
+                    <div class="community-details">
+                        <p>As a member of Wake and Shine, we partnered with Action Aid to spearhead the "Komesha FGM Sasa!" project, a grassroots movement dedicated to eradicating Female Genital Mutilation and promoting gender equality in Chuka Igamba Ng'ombe.</p>
+                        <div class="community-impact">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li><strong>Awareness Campaigns:</strong><span>Organized 25 community dialogue forums engaging religious leaders, elders, and parents on the dangers of FGM and early marriage.</span></li>
+                                <li><strong>Legal Literacy:</strong><span>Educated community members on the Prohibition of Female Genital Mutilation Act, empowering them to report violations.</span></li>
+                                <li><strong>School Outreach:</strong><span>Visited 18 primary and secondary schools, reaching 1,500 students with anti-FGM messaging and reproductive health information.</span></li>
+                                <li><strong>Community Monitoring:</strong><span>Established 10 community watchdog groups trained to identify and report at-risk girls, leading to zero new FGM cases in 6 villages.</span></li>
+                                <li><strong>Girl Child Education:</strong><span>Partnered with local school boards and parent associations to champion girls' enrollment and retention, addressing barriers such as early marriage and domestic responsibilities.</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="blog-post">
-                <div class="blog-gallery">
-                    <div class="gallery-grid" id="blog2-gallery">
-                        <div class="gallery-item"><img src="images/blogs/blog2.jpg" alt="Career Tips for Engineers" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="blog-content">
-                    <h3><i class="fas fa-chalkboard-user"></i> 5 Tips for Young Civil Engineers</h3>
-                    <p>Starting a career in civil engineering can be challenging. Here are 5 essential tips to help young engineers succeed and grow professionally...</p>
-                    <a href="https://www.linkedin.com/posts/moses-mwaura-486991123_constructionmanager-civilengineering-activity-7338870182229999617-PHb0/" target="_blank" rel="noopener noreferrer" class="read-more-link"><i class="fas fa-external-link-alt"></i> Read Full Article →</a>
-                </div>
+            <!-- Community Stats Row -->
+            <div class="community-stats-row">
+                <div class="stat-box"><span class="stat-number">1,000+</span><span class="stat-label">Community Members Reached</span></div>
+                <div class="stat-box"><span class="stat-number">200+</span><span class="stat-label">Girls Through Safe Passage</span></div>
+                <div class="stat-box"><span class="stat-number">250+</span><span class="stat-label">Girls Supported to Stay in School</span></div>
+                <div class="stat-box"><span class="stat-number">25+</span><span class="stat-label">Public Barazas</span></div>
+                <div class="stat-box"><span class="stat-number">1,500+</span><span class="stat-label">Students Reached</span></div>
+                <div class="stat-box"><span class="stat-number">10</span><span class="stat-label">Watchdog Groups Trained</span></div>
             </div>
             
-            <div class="blog-post">
-                <div class="blog-gallery">
-                    <div class="gallery-grid" id="blog3-gallery">
-                        <div class="gallery-item"><img src="images/blogs/blog3.jpg" alt="Modern Surveying Techniques" loading="lazy"></div>
-                    </div>
-                </div>
-                <div class="blog-content">
-                    <h3><i class="fas fa-microchip"></i> Modern Surveying Techniques</h3>
-                    <p>Technology is transforming land surveying. Learn how drones and GPS are making surveying faster, more accurate, and safer...</p>
-                    <a href="https://www.thecadroom.com/blog/advanced-surveying-techniques-shaping-the-modern-building-industry/" target="_blank" rel="noopener noreferrer" class="read-more-link"><i class="fas fa-external-link-alt"></i> Read Full Article →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         DOWNLOADS SECTION
-    ======================================== -->
-    <section id="downloads-section" class="downloads-section">
-        <div class="container">
-            <h2><i class="fas fa-download"></i> Downloads</h2>
-            <div class="downloads-grid">
-                <a href="downloads/structural-designs.pdf" download class="download-card">
-                    <i class="fas fa-drafting-compass"></i>
-                    <span>Structural Designs</span>
-                </a>
-                <a href="downloads/boq-samples.pdf" download class="download-card">
-                    <i class="fas fa-table"></i>
-                    <span>BOQ Samples</span>
-                </a>
-                <a href="downloads/cad-screenshots.pdf" download class="download-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <span>CAD Screenshots</span>
-                </a>
-                <a href="downloads/site-reports.pdf" download class="download-card">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Site Reports</span>
-                </a>
-                <a href="downloads/survey-maps.pdf" download class="download-card">
-                    <i class="fas fa-map"></i>
-                    <span>Survey Maps</span>
-                </a>
-                <a href="downloads/HARON_MUTURI_CV.pdf" download class="download-card">
-                    <i class="fas fa-file-pdf"></i>
-                    <span>CV / Resume</span>
-                </a>
-                <a href="downloads/project-samples.pdf" download class="download-card">
-                    <i class="fas fa-folder-open"></i>
-                    <span>Project Samples</span>
-                </a>
+            <!-- Biblical Quotation -->
+            <div class="community-quote">
+                <p class="quote-text">“Speak up for those who cannot speak for themselves, for the rights of all who are destitute. Speak up and judge fairly; defend the rights of the poor and needy.”</p>
+                <p class="quote-source">— Proverbs 31:8-9</p>
             </div>
         </div>
     </section>
@@ -542,29 +483,29 @@
         <div class="container">
             <h2><i class="fas fa-envelope-open-text"></i> Let's Talk</h2>
             <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="address-card">
-                        <div class="address-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <h3><i class="fas fa-location-dot"></i> Visit Me</h3>
-                        <a href="https://maps.app.goo.gl/NA9LcKkK6agRrUBdA" target="_blank" class="address-link"><i class="fas fa-external-link-alt"></i> Chuka Town, Kenya</a>
-                        <div class="address-details">
-                            <p><i class="fas fa-mail-bulk"></i> P.O. Box 20 - 60400</p>
-                            <p><i class="fas fa-building"></i> Chuka, Tharaka Nithi County</p>
-                        </div>
-                        
-                    </div>
+                <div class="address-card">
+                    <div class="address-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Address</h3>
+                    <p>Chuka Town, Kenya</p>
+                    <p>P.O. Box 20 - 60400</p>
+                    <p>Tharaka Nithi County</p>
                 </div>
                 
-                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                     <input type="hidden" name="access_key" value="f9e83fab-63e6-40a6-b26f-9d4dcf87f1e9">
-                    <input type="hidden" name="subject" value="New Message from Haron's Portfolio">
-                    <input type="hidden" name="from_name" value="Haron Muturi Portfolio">
+                    <input type="hidden" name="subject" value="New Message from Portfolio">
                     <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <div class="form-row">
+                        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><input type="tel" name="phone" placeholder="Your Phone Number"></div>
+                        <div class="form-group"><input type="text" name="subject" placeholder="Subject"></div>
+                    </div>
+                    <div class="form-group"><textarea name="message" placeholder="Your Message" rows="5" required></textarea></div>
                     <input type="checkbox" name="botcheck" style="display: none;">
-                    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
                 </form>
             </div>
         </div>
@@ -583,6 +524,11 @@
                 <a href="https://maps.app.goo.gl/NA9LcKkK6agRrUBdA" target="_blank" rel="noopener noreferrer" class="contact-link location-link"><i class="fas fa-location-dot"></i> Chuka, Kenya</a>
             </p>
         </div>
+        <div class="footer-cv">
+            <a href="downloads/HARON_MUTURI_CV.pdf" download class="cv-download-link">
+                <i class="fas fa-file-pdf"></i> My CV / Resume
+            </a>
+        </div>
         <p><i class="far fa-copyright"></i> 2026 Haron Muturi. All rights reserved.</p>
     </footer>
 
@@ -594,9 +540,7 @@
         <div class="modal-content-wrapper">
             <img class="modal-content" id="modalImage">
             <div class="image-stats">
-                <div class="stats-left">
-                    <span class="view-count"><i class="fas fa-eye"></i> Views: <span id="viewCount">0</span></span>
-                </div>
+                <div class="stats-left"><span class="view-count"><i class="fas fa-eye"></i> Views: <span id="viewCount">0</span></span></div>
                 <div class="stats-right">
                     <button class="like-btn" id="likeBtn"><i class="fas fa-heart"></i> Like <span id="likeCount">0</span></button>
                     <button class="dislike-btn" id="dislikeBtn"><i class="fas fa-thumbs-down"></i> Dislike <span id="dislikeCount">0</span></button>
