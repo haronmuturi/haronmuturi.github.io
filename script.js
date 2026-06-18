@@ -472,13 +472,14 @@ window.uploadImage = function(galleryId) {
 // 12. ROTATING ROLES
 // ========================================
 const roles = [
-    "Civil Engineer", 
-    "Planning and Feasibility Study", 
+    "Structure Designing", 
+    "Feasibility Study", 
     "Designing and Building", 
     "Project Management", 
     "Survey Works", 
     "Quality Assurance", 
-    "Maintenance and Retrofitting"
+    "Construction Manager",
+    "Community Impact"
 ];
 let roleIndex = 0;
 const roleElement = document.getElementById('rotatingRole');
