@@ -40,94 +40,99 @@
     <!-- Dark Mode Toggle Button -->
     <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
 
-    <!-- ========================================
+ <!-- ========================================
          NAVIGATION BAR
     ======================================== -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <div class="profile-clickable" id="profileClickable">
-                    <img src="images/profilephoto.png" alt="Haron Muturi" class="nav-profile-photo">
-                </div>
-                <span>Haron Muturi</span>
-            </a>
-            
-            <div class="menu-toggle" id="mobile-menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">Profile</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#community" class="nav-link">Community</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+<nav>
+    <div class="nav-container">
+        <a href="#" class="logo">
+            <span>Haron Muturi Portfolio</span>
+        </a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-    </nav>
+        
+        <ul class="nav-menu">
+            <li><a href="#about" class="nav-link">Profile</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#community" class="nav-link">Community</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- ========================================
-         HERO SECTION
+<!-- ========================================
+         HERO SECTION - FULL SCREEN CARD + CV
     ======================================== -->
-    <section class="hero">
-        <div class="hero-card">
-            <div class="hero-badge">
-                <span>Civil Engineer</span>
+<section class="hero">
+    <div class="hero-card">
+        <!-- Profile Photo -->
+        <div class="hero-profile-photo">
+            <img src="images/profilephoto.png" alt="Haron Muturi - Civil Engineer">
+        </div>
+        
+        <!-- Name -->
+        <h1 class="hero-title">Haron Muturi</h1>
+        
+        <!-- Civil Engineer Badge -->
+        <div class="hero-badge">
+            <span>Civil Engineer</span>
+        </div>
+        
+        <!-- Role / Tagline -->
+        <div class="hero-role">
+            <span>✦</span>
+            <span id="rotatingRole">Designing and Building</span>
+            <span>✦</span>
+        </div>
+        
+        <p class="hero-description">
+            Designing tomorrow's infrastructure with sustainable solutions that stand the test of time.
+        </p>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">3.0+</span>
+                <span class="stat-label">Years Experience</span>
             </div>
-            
-            <h1 class="hero-title">Haron Muturi</h1>
-            
-            <div class="hero-role">
-                <span>✦</span>
-                <span id="rotatingRole">Civil Engineer</span>
-                <span>✦</span>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Projects Completed</span>
             </div>
-            
-            <p class="hero-description">
-                Designing Tomorrow's Infrastructure with Sustainable Solutions that Stand the test of time.
-            </p>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">3.0+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">4+</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">96%</span>
-                    <span class="stat-label">Client Satisfaction</span>
-                </div>
-            </div>
-            
-            <div class="hero-cta">
-                <a href="#contact" class="cta-primary">
-                    <span>Let's Collaborate</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#experience" class="cta-secondary">
-                    <span>View My Work</span>
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-                <a href="downloads/HARON_MUTURI_CV.pdf" download class="cta-cv">
-                    <i class="fas fa-file-pdf"></i>
-                    <span>My CV/Resume</span>
-                </a>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">96%</span>
+                <span class="stat-label">Client Satisfaction</span>
             </div>
         </div>
         
-        <div class="hero-scroll-indicator">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
+        <div class="hero-cta">
+            <a href="#contact" class="cta-primary">
+                <span>Let's Collaborate</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#experience" class="cta-secondary">
+                <span>View My Work</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="downloads/HARON_MUTURI_CV.pdf" download class="cta-cv">
+                <i class="fas fa-file-pdf"></i>
+                <span>My CV / Resume</span>
+            </a>
         </div>
-    </section>
+    </div>
+    
+    <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
     <!-- ========================================
          PROFILE SUMMARY SECTION
@@ -137,10 +142,10 @@
             <h2>Profile Summary</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Career Journey</h3>
+                    <h3>The Beginning of My Civil Engineering Career</h3>
                     <p>My journey into civil engineering began with a childhood fascination for bridges, roads, and buildings—wondering how massive structures stand firm against nature's forces. This curiosity drove me to pursue a Bachelor of Science in Civil Engineering at Jomo Kenyatta University of Agriculture and Technology (JKUAT), where I graduated with Second Class Honors - Upper Division. My industrial attachments at Kenya Rural Roads Authority (KeRRA) and Meru Water & Sewerage Services (MEWASSCO) gave me my first real taste of engineering—checking levels during culvert backfilling, supervising box culvert construction, and conducting materials testing in the laboratory. These experiences taught me that engineering is not just about calculations; it's about building things that serve communities and stand the test of time.</p>
                     
-                    <h3>Engineering Passion</h3>
+                    <h3>Behold the Engineering Passion</h3>
                     <p>Today, as a Civil Engineer with the State Department of Housing & Urban Development, I am actively involved in designing and supervising civil works for the Chuka Modern Market—a flagship Affordable Housing Program project. From drainage systems and road networks to water supply and structural detailing, every day brings a new challenge. I have also worked with PalmLand Surveys & Contractors Ltd, where I honed my skills in engineering surveys, data analysis, and technical reporting. Beyond the technical side, I believe engineering is a calling to solve problems, improve lives, and leave a lasting impact. Whether it's ensuring quality control on site or mentoring young engineers, I bring passion, integrity, and excellence to everything I do.</p>
                 </div>
                 <div class="about-gallery">
@@ -408,7 +413,7 @@
     ======================================== -->
     <section id="community" class="community">
         <div class="container">
-            <h2><i class="fas fa-hands-helping"></i> Beyond Engineering</h2>
+            <h2><i class="fas fa-hands-helping"></i> Community Development</h2>
             
             <div class="community-grid">
                 <!-- Plan International Card -->
