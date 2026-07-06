@@ -608,3 +608,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// ========================================
+// SCROLL BUTTON FUNCTIONALITY
+// ========================================
+(function initScrollButton() {
+    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+    const heroSection = document.querySelector('.hero');
+    const aboutSection = document.querySelector('#about');
+    
+    if (scrollIndicator && heroSection && aboutSection) {
+        // Click scroll indicator to scroll to next section
+        scrollIndicator.addEventListener('click', function() {
+            const targetPosition = aboutSection.offsetTop - 70; // Account for nav bar
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Also allow clicking the arrow icon
+        const arrowIcon = scrollIndicator.querySelector('i');
+        if (arrowIcon) {
+            arrowIcon.style.cursor = 'pointer';
+        }
+    }
+})();
