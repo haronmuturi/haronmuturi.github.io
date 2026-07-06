@@ -1955,3 +1955,51 @@ body.dark-mode .quote-source {
         display: none;
     }
 }
+/* ========================================
+   SCROLL INDICATOR PULSE ANIMATION
+   ======================================== */
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 20;
+}
+
+.hero-scroll-indicator:hover {
+    opacity: 1;
+}
+
+.hero-scroll-indicator span {
+    font-size: 0.65rem;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.hero-scroll-indicator i {
+    font-size: 0.7rem;
+    color: #3498db;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode .hero-scroll-indicator span {
+    color: #a0aec0;
+}
+
+body.dark-mode .hero-scroll-indicator i {
+    color: #ffd700;
+}
