@@ -181,12 +181,14 @@ if (mobileMenu && navMenu) {
 })();
 
 // ========================================
-// 8. IMAGE VIEWER MODAL
+// 8. IMAGE VIEWER MODAL WITH NAVIGATION
 // ========================================
 (function initImageModal() {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.close-modal');
+    const prevBtn = document.getElementById('prevImage');
+    const nextBtn = document.getElementById('nextImage');
     const viewSpan = document.getElementById('viewCount');
     const likeSpan = document.getElementById('likeCount');
     const dislikeSpan = document.getElementById('dislikeCount');
@@ -200,6 +202,41 @@ if (mobileMenu && navMenu) {
     
     let currentSrc = '';
     let currentStats = { views: 0, likes: 0, dislikes: 0 };
+    let currentIndex = 0;
+    let currentGalleryImages = [];
+
+    // Get images from the current gallery only
+    function getGalleryImages(imgElement) {
+        // Find the parent gallery container
+        const gallery = imgElement.closest('.gallery-grid');
+        if (!gallery) return [imgElement];
+        
+        // Get all images in the same gallery
+        return Array.from(gallery.querySelectorAll('img'));
+    }
+
+    // Navigate to next image (within same gallery)
+    function nextImage() {
+        if (currentGalleryImages.length === 0) return;
+        currentIndex = (currentIndex + 1) % currentGalleryImages.length;
+        openModalByIndex(currentIndex);
+    }
+
+    // Navigate to previous image (within same gallery)
+    function prevImage() {
+        if (currentGalleryImages.length === 0) return;
+        currentIndex = (currentIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+        openModalByIndex(currentIndex);
+    }
+
+    // Open modal by index
+    function openModalByIndex(index) {
+        if (currentGalleryImages.length === 0) return;
+        const img = currentGalleryImages[index];
+        if (img) {
+            openModal(img);
+        }
+    }
 
     async function loadStatsFromCloud(imageSrc) {
         try {
@@ -312,6 +349,11 @@ if (mobileMenu && navMenu) {
         modalImg.src = currentSrc;
         if (captionEl) captionEl.textContent = img.alt || '';
         
+        // Get only images from the same gallery
+        currentGalleryImages = getGalleryImages(img);
+        currentIndex = currentGalleryImages.indexOf(img);
+        if (currentIndex === -1) currentIndex = 0;
+        
         await loadStatsFromCloud(currentSrc);
         
         currentStats.views++;
@@ -327,6 +369,7 @@ if (mobileMenu && navMenu) {
     function closeModal() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
+        currentGalleryImages = [];
     }
 
     const onClick = function() { openModal(this); };
@@ -338,13 +381,22 @@ if (mobileMenu && navMenu) {
         });
     };
 
+    // Watch for new images
     new MutationObserver(attachListeners).observe(document.body, { childList: true, subtree: true });
     
+    // Event Listeners
     closeBtn?.addEventListener('click', closeModal);
     likeBtn?.addEventListener('click', handleLike);
     dislikeBtn?.addEventListener('click', handleDislike);
+    prevBtn?.addEventListener('click', prevImage);
+    nextBtn?.addEventListener('click', nextImage);
+    
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.style.display === 'block') closeModal(); });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+        if (e.key === 'ArrowLeft' && modal.style.display === 'block') prevImage();
+        if (e.key === 'ArrowRight' && modal.style.display === 'block') nextImage();
+    });
     
     attachListeners();
 })();
