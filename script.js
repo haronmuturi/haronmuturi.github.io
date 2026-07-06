@@ -609,21 +609,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 // ========================================
-// SCROLL BUTTON FUNCTIONALITY
+// PAGE LOCK UNTIL SCROLL BUTTON CLICKED
 // ========================================
-(function initScrollButton() {
+(function initPageLock() {
     const scrollIndicator = document.querySelector('.hero-scroll-indicator');
     const heroSection = document.querySelector('.hero');
     const aboutSection = document.querySelector('#about');
+    let isUnlocked = false;
+    
+    // Lock body scroll initially
+    document.body.style.overflow = 'hidden';
     
     if (scrollIndicator && heroSection && aboutSection) {
-        // Click scroll indicator to scroll to next section
         scrollIndicator.addEventListener('click', function() {
-            const targetPosition = aboutSection.offsetTop - 70; // Account for nav bar
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            if (!isUnlocked) {
+                isUnlocked = true;
+                document.body.style.overflow = 'auto';
+                
+                // Scroll to next section
+                const targetPosition = aboutSection.offsetTop - 70;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
         
         // Also allow clicking the arrow icon
@@ -632,4 +641,14 @@ document.addEventListener('DOMContentLoaded', () => {
             arrowIcon.style.cursor = 'pointer';
         }
     }
+    
+    // Optional: Unlock when clicking nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (!isUnlocked) {
+                isUnlocked = true;
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
 })();
