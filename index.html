@@ -6,7 +6,13 @@
     <meta name="description" content="Haron Muturi - Professional Civil Engineer Portfolio showcasing experience, skills, achievements, and projects">
     <meta name="author" content="Haron Muturi">
     <meta name="theme-color" content="#2c3e50">
-    
+
+    <!-- Security headers (set via meta since this is static hosting; for stronger protection, set the
+         equivalent HTTP response headers at your web server / hosting provider as well) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action https://api.web3forms.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Haron Muturi | Portfolio">
     <meta property="og:description" content="Professional Civil Engineer with 2+ years experience in building construction, site supervision, and infrastructure projects.">
@@ -40,34 +46,35 @@
     <!-- Dark Mode Toggle Button -->
     <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
 
- <!-- ========================================
+    <!-- ========================================
          NAVIGATION BAR
     ======================================== -->
-<nav>
-    <div class="nav-container">
-        <a href="#" class="logo">
-            <span>Haron Muturi Portfolio</span>
-        </a>
-        
-        <div class="menu-toggle" id="mobile-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>Haron Muturi Portfolio</span>
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">Profile</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-        
-        <ul class="nav-menu">
-            <li><a href="#about" class="nav-link">Profile</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#achievements" class="nav-link">Achievements</a></li>
-            <li><a href="#community" class="nav-link">Community</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+    </nav>
 
 <!-- ========================================
-         HERO SECTION - FULL SCREEN CARD + CV
+         HERO SECTION - FULL SCREEN
     ======================================== -->
 <section class="hero">
     <div class="hero-card">
@@ -79,7 +86,7 @@
         <!-- Name -->
         <h1 class="hero-title">Haron Muturi</h1>
         
-        <!-- Civil Engineer Badge -->
+        <!-- Animated Typing Effect -->
         <div class="hero-badge">
             <span>Civil Engineer</span>
         </div>
@@ -97,17 +104,17 @@
         
         <div class="hero-stats">
             <div class="stat-item">
-                <span class="stat-number">3.0+</span>
+                <span class="stat-number" data-count="3">3.0+</span>
                 <span class="stat-label">Years Experience</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-                <span class="stat-number">4+</span>
+                <span class="stat-number" data-count="4">4+</span>
                 <span class="stat-label">Projects Completed</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-                <span class="stat-number">96%</span>
+                <span class="stat-number" data-count="96">96%</span>
                 <span class="stat-label">Client Satisfaction</span>
             </div>
         </div>
@@ -117,7 +124,7 @@
                 <span>Let's Collaborate</span>
                 <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="#experience" class="cta-secondary">
+            <a href="#projects" class="cta-secondary">
                 <span>View My Work</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
@@ -129,99 +136,38 @@
     </div>
     
     <div class="hero-scroll-indicator">
-        <span>Scroll</span>
+        <span>Scroll to explore</span>
         <i class="fas fa-chevron-down"></i>
     </div>
 </section>
 
     <!-- ========================================
-         ABOUT SECTION - ENHANCED
+         ABOUT SECTION - SIMPLIFIED
     ======================================== -->
 <section id="about" class="about">
     <div class="container">
         <h2>Profile Summary</h2>
-        
         <div class="about-wrapper">
             <!-- Left Column: Text -->
             <div class="about-text">
                 <div class="about-story">
-                    
                     <h3>The Beginning of My Civil Engineering Career</h3>
                     <p>My journey into civil engineering began with a childhood fascination for bridges, roads, and buildings—wondering how massive structures stand firm against nature's forces. This curiosity drove me to pursue a Bachelor of Science in Civil Engineering at Jomo Kenyatta University of Agriculture and Technology (JKUAT), where I graduated with Second Class Honors – Upper Division.</p>
                     <p>My industrial attachments at Kenya Rural Roads Authority (KeRRA) and Meru Water & Sewerage Services (MEWASSCO) gave me my first real taste of engineering—checking levels during culvert backfilling, supervising box culvert construction, and conducting materials testing in the laboratory. These experiences taught me that engineering is not just about calculations; it's about building things that serve communities and stand the test of time.</p>
                 </div>
                 
                 <div class="about-story">
-                    
                     <h3>Behold the Engineering Passion</h3>
-                    <p>Today, as a Civil Engineer Intern with the State Department of Housing & Urban Development, I am actively involved in designing and supervising civil works for the Chuka Modern Market—a flagship Affordable Housing Program project. From drainage systems and Parking areas to structural detailing, every day brings a new challenge.</p>
+                    <p>Today, as a Civil Engineer Intern with the State Department of Housing & Urban Development, I am actively involved in designing and supervising civil works for the Chuka Modern Market—a flagship Affordable Housing Program project. From drainage systems and parking areas to structural detailing, every day brings a new challenge.</p>
                     <p>I have also worked with PalmLand Surveys & Contractors Ltd, where I have gained skills in engineering surveys, data analysis, and technical reporting. Beyond the technical side, I believe engineering is a calling to solve problems, improve lives, and leave a lasting impact. Whether it's ensuring quality control on site or mentoring young engineers, I bring passion, integrity, and excellence to everything I do.</p>
                 </div>
             </div>
             
-            <!-- Right Column: Gallery -->
-            <div class="about-gallery-wrapper">
-                <h3><i class="fas fa-images"></i> Project Gallery</h3>
-                <div class="gallery-grid" id="about-gallery">
-                    
-                    <div class="gallery-item">
-                        <img src="images/me/me5.jpg" alt="Commissioning of Chuka Modern Market, 2026" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Commissioning 2026</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/me/me1.jpg" alt="Setting Out Exercise at Ndarugu AHP, Juja, 2025" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Setting Out 2025</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/me/me4.jpeg" alt="Chuka Modern Market Construction in Progress" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Construction Progress</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/me/me2.jpg" alt="Supervising MicroTunnelling for Sewerline in Chuka" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>MicroTunnelling</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/me/me6.png" alt="Supervising MicroTunnelling for Sewerline in Chuka" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Steel fabrication</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/me/me7.png" alt="Supervising MicroTunnelling for Sewerline in Chuka" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Chuka Modern Market Commisioning</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/me/me8.png" alt="Supervising MicroTunnelling for Sewerline in Chuka" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Chuka Modern Market Commisioning</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/me/me9.png" alt="Supervising MicroTunnelling for Sewerline in Chuka" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Chuka Modern Market Commisioning</span>
-                        </div>
-                    </div>
-
-
-
+            <!-- Right Column: Single Image -->
+            <div class="about-image-wrapper">
+                <div class="about-hero-image">
+                    <img src="images/me/me5.jpg" alt="Haron Muturi - Civil Engineer" loading="lazy">
+                    <div class="about-image-caption">Commissioning of Chuka Modern Market, 2026</div>
                 </div>
             </div>
         </div>
@@ -231,163 +177,213 @@
     <!-- ========================================
          EXPERIENCE SECTION
     ======================================== -->
-<section id="experience" class="experience">
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+
+            <!-- Experience Card 1 -->
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <h3>Civil Engineer Intern - State Department of Housing & Urban Development</h3>
+                    </div>
+                    <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2026 - Present | Chuka Modern Market, Tharaka Nithi County</p>
+                    <p class="exp-role-description">Assisted in the design and construction supervision of the Chuka Modern Market—a flagship Affordable Housing Program project. Collaborated with contractors, upheld quality standards, and reported on project milestones and challenges to senior engineers.</p>
+                </div>
+                <div class="exp-gallery">
+                    <div class="gallery-grid" id="exp1-gallery">
+                        <div class="gallery-item"><img src="images/chuka/chuka1.jpg" alt="Chuka Market Construction Front, 2026" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/chuka/chuka2.jpeg" alt="Chuka Modern Market Exterior View" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/chuka/chuka3.jpeg" alt="Fabrication of Smart Stalls, 2026" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/chuka/chuka4.jpeg" alt="Chuka Modern Market Completed" loading="lazy"></div>
+                    </div>
+                </div>
+                <div class="exp-content">
+                    <div class="exp-responsibilities">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Civil Works Supervision</strong><span>Assisted in designing and supervising storm water drainage, parking areas, and sewer lines. Reviewed engineering drawings and BOQs to verify compliance with approved designs.</span></li>
+                            <li><strong>Structural Systems Implementation</strong><span>Supported the implementation of designed structural systems including foundations, columns, beams, and slabs. Conducted regular inspections to verify structural integrity.</span></li>
+                            <li><strong>Quality Assurance & Compliance</strong><span>Assisted in inspecting building construction for code compliance, structural integrity, and proper material usage. Documented observations and recommended corrective actions.</span></li>
+                            <li><strong>Project Reporting & Site Management</strong><span>Supervised daily civil works implementation and prepared comprehensive site reports. Ensured all activities complied with project specifications and safety protocols.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Card 2 -->
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <h3>Civil & Survey Works Intern - PalmLand Surveys & Contractors Ltd</h3>
+                    </div>
+                    <p class="exp-date"><i class="far fa-calendar-alt"></i> Nov 2024 - Dec 2025 | Thika</p>
+                    <p class="exp-role-description">Gained experience in engineering surveys, data collection, and technical reporting for infrastructure projects. Worked closely with survey teams to ensure accuracy in setting out and leveling for construction works.</p>
+                </div>
+                <div class="exp-gallery">
+                    <div class="gallery-grid" id="exp2-gallery">
+                        <div class="gallery-item"><img src="images/palmland/palm1.jpg" alt="Leveling Using Theodolite" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/palmland/palm2.jpeg" alt="Project Planning Session" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/palmland/palm3.jpeg" alt="Ndarugo Affordable Housing Start, Juja" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/palmland/palm4.jpg" alt="Engineering Drawing Interpretation at Ndarugu" loading="lazy"></div>
+                    </div>
+                </div>
+                <div class="exp-content">
+                    <div class="exp-responsibilities">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Field Data Collection & Analysis</strong><span>Collected, validated, and analyzed field survey data to support accurate reporting and informed decision-making.</span></li>
+                            <li><strong>Technical Report Preparation</strong><span>Prepared analytical and technical reports aligned with compliance standards and project documentation requirements.</span></li>
+                            <li><strong>Excel Data Analysis</strong><span>Utilized Microsoft Excel to organize survey data, identify trends, and detect inconsistencies.</span></li>
+                            <li><strong>Documentation Review</strong><span>Supported documentation review processes to ensure completeness, accuracy, and compliance with project specifications.</span></li>
+                            <li><strong>Compliance Monitoring</strong><span>Assisted in monitoring construction activities against approved specifications and design standards.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Card 3 -->
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <h3>Civil Engineer Attachee - Meru Water & Sewerage Services Co. (MEWASSCO)</h3>
+                    </div>
+                    <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2024 - Apr 2024 | Meru County</p>
+                    <p class="exp-role-description">Gained exposure to water infrastructure projects. Participated in pipeline installation, system inspections, metre reading, water production management, and water quality monitoring activities across Meru Town and its environs.</p>
+                </div>
+                <div class="exp-gallery">
+                    <div class="gallery-grid" id="exp3-gallery">
+                        <div class="gallery-item"><img src="images/mewassco/mewass1.jpeg" alt="Water Pipeline Installation at Meru Makutano" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/mewassco/mewass2.jpg" alt="MEWASSCO Logo" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/mewassco/mewass3.jpg" alt="Sewer Treatment Plant" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/mewassco/mewass4.jpg" alt="Treatment Plant" loading="lazy"></div>
+                    </div>
+                </div>
+                <div class="exp-content">
+                    <div class="exp-responsibilities">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Pipeline Inspection & Installation</strong><span>Assisted in the inspection, installation, and maintenance of water distribution pipelines across Meru County. Gained practical understanding of underground utility networks.</span></li>
+                            <li><strong>Field Surveys & Levelling</strong><span>Participated in field surveys and leveling works to determine pipeline alignment and gradient. Used surveying equipment (Dumpy level and RTK) for accurate placement.</span></li>
+                            <li><strong>Hydraulics & Stormwater Assessment</strong><span>Supported system inspections and intake assessments, strengthening knowledge of hydraulics, flow rates, and stormwater management principles.</span></li>
+                            <li><strong>Water Quality Monitoring</strong><span>Conducted water quality monitoring and data collection to ensure environmental compliance and public health standards.</span></li>
+                            <li><strong>Asset Inspection & Field Reporting</strong><span>Assisted in asset inspections and preparation of detailed field reports for road and water asset management.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Card 4 -->
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-title">
+                        <h3>Civil Engineer Attachee - KeRRA, Meru County</h3>
+                    </div>
+                    <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2023 - Apr 2023 | Laare-Ndumuru Road, Meru County</p>
+                    <p class="exp-role-description">Worked on the Laare-Ndumuru Road Project, gaining experience in road construction supervision and materials testing. Participated in culvert construction, quality control, and laboratory testing of construction materials.</p>
+                </div>
+                <div class="exp-gallery">
+                    <div class="gallery-grid" id="exp4-gallery">
+                        <div class="gallery-item"><img src="images/laare_ndumuru/laare1.jpg" alt="Leveling Road Section using Dumpy Level" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/laare_ndumuru/laare2.jpeg" alt="Box Culvert Construction, 2023" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/laare_ndumuru/laare3.jpeg" alt="Atterberg Limits Test, 2023" loading="lazy"></div>
+                        <div class="gallery-item"><img src="images/laare_ndumuru/laare4.jpeg" alt="Sieve Analysis Test, 2023" loading="lazy"></div>
+                    </div>
+                </div>
+                <div class="exp-content">
+                    <div class="exp-responsibilities">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li><strong>Culvert Construction Supervision</strong><span>Assisted in checking levels during backfilling of culvert sections to ensure proper drainage and structural stability. Learned proper construction sequencing for box and pipe culverts.</span></li>
+                            <li><strong>Levelling & Setting Out</strong><span>Participated in levelling and setting out works to establish accurate alignment and grades for road sections and culvert positions.</span></li>
+                            <li><strong>Quality Control & Standards Compliance</strong><span>Supervised box culvert and access pipe culvert construction to ensure compliance with design standards and KeRRA specifications.</span></li>
+                            <li><strong>Materials Testing (Laboratory)</strong><span>Performed materials testing including Atterberg limits for soil classification and sieve analysis for aggregate grading.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PROJECTS SECTION
+    ======================================== -->
+<section id="projects" class="projects">
     <div class="container">
-        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-
-        <!-- Experience Card 1 -->
-        <div class="exp-card">
-            <div class="exp-header">
-                <div class="exp-title">
-                    <h3>Civil Engineer Intern - State Department of Housing & Urban Development</h3>
-                </div>
-                <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2026 - Present | Chuka Modern Market, Tharaka Nithi County</p>
-                <p class="exp-role-description">Assisted in the design and construction supervision of the Chuka Modern Market—a flagship Affordable Housing Program project. Collaborated with contractors, upheld quality standards, and reported on project milestones and challenges to senior engineers.</p>
-            </div>
-
-            <div class="exp-gallery">
-                <div class="gallery-grid" id="exp1-gallery">
-                    <div class="gallery-item"><img src="images/chuka/chuka1.jpg" alt="Chuka Market Construction Front, 2026" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/chuka/chuka2.jpeg" alt="Chuka Modern Market Exterior View" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/chuka/chuka3.jpeg" alt="Fabrication of Smart Stalls, 2026" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/chuka/chuka4.jpeg" alt="Chuka Modern Market Completed" loading="lazy"></div>
+        <h2><i class="fas fa-project-diagram"></i> Featured Projects</h2>
+        
+        <!-- Project 1: Chuka Modern Market -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-info">
+                    <h3>Chuka Modern Market</h3>
+                    <p class="project-meta"><i class="far fa-calendar-alt"></i> 2026 | Tharaka Nithi County</p>
+                    <p class="project-description">A flagship Affordable Housing Program project featuring modern market stalls, parking areas, drainage systems, and sewer lines.</p>
                 </div>
             </div>
-
-            <div class="exp-content">
-                <div class="exp-responsibilities">
-                    <h4>Key Responsibilities:</h4>
-                    <ul>
-                        <li>
-                            <strong>Civil Works Supervision</strong>
-                            <span>Assisted in designing and supervising storm water drainage, parking areas, and sewer lines. Reviewed engineering drawings and BOQs to verify compliance with approved designs and project specifications.</span>
-                        </li>
-                        <li>
-                            <strong>Structural Systems Implementation</strong>
-                            <span>Supported the implementation of designed structural systems including foundations, columns, beams, and slabs. Conducted regular inspections to verify structural integrity and adherence to design standards.</span>
-                        </li>
-                        <li>
-                            <strong>Quality Assurance & Compliance</strong>
-                            <span>Assisted in inspecting building construction for code compliance, structural integrity, and proper material usage. Documented observations and recommended corrective actions where necessary.</span>
-                        </li>
-                        <li>
-                            <strong>Project Reporting & Site Management</strong>
-                            <span>Supervised daily civil works implementation and prepared comprehensive site reports. Ensured all activities complied with project specifications, safety protocols, and contractual obligations.</span>
-                        </li>
-                    </ul>
+            <div class="project-media">
+                <div class="media-grid">
+                    <div class="media-item video-item">
+                        <video controls preload="metadata" poster="images/chuka/chuka4.jpeg">
+                            <source src="images/projects/chuka/chuka-market.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="media-item">
+                        <img src="images/projects/chuka/chuka2.jpeg" alt="Chuka Market Exterior" loading="lazy">
+                    </div>
+                    <div class="media-item">
+                        <img src="images/projects/chuka/chuka3.jpeg" alt="Smart Stalls Fabrication" loading="lazy">
+                    </div>
+                    <div class="media-item">
+                        <img src="images/projects/chuka/me7.png" alt="Commissioning" loading="lazy">
+                    </div>
                 </div>
+            </div>
+            <div class="project-tags">
+                <span class="tag">Site Supervision & Inspection</span>
+                <span class="tag">Quality Assurance & Control</span>
+                <span class="tag">Structural Design</span>
+                <span class="tag">Civil works</span>
+                <span class="tag">Health and Safety (HSE) Compliance</span>
+                <span class="tag">Project Progress Monitoring & Reporting</span>
+                <span class="tag">Software: AutoCAD, Revit, MS Projetc</span>
             </div>
         </div>
 
-        <!-- Experience Card 2 -->
-        <div class="exp-card">
-            <div class="exp-header">
-                <div class="exp-title">
-                    <h3>Civil & Survey Works Intern - PalmLand Surveys & Contractors Ltd</h3>
-                </div>
-                <p class="exp-date"><i class="far fa-calendar-alt"></i> Nov 2024 - Dec 2025 | Thika</p>
-                <p class="exp-role-description">Gained experience in engineering surveys, data collection, and technical reporting for infrastructure projects. Worked closely with survey teams to ensure accuracy in setting out and leveling for construction works.</p>
-            </div>
-
-            <div class="exp-gallery">
-                <div class="gallery-grid" id="exp2-gallery">
-                    <div class="gallery-item"><img src="images/palmland/palm1.jpg" alt="Leveling Using Theodolite" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/palmland/palm2.jpeg" alt="Project Planning Session" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/palmland/palm3.jpeg" alt="Ndarugo Affordable Housing Start, Juja" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/palmland/palm4.jpg" alt="Engineering Drawing Interpretation at Ndarugu" loading="lazy"></div>
+        <!-- Project 2: Ndarugo Affordable Housing -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-info">
+                    <h3>Ndarugo Affordable Housing Project</h3>
+                    <p class="project-meta"><i class="far fa-calendar-alt"></i> 2025 | Juja Constituency</p>
+                    <p class="project-description">Affordable housing project featuring setting out works, engineering surveys, and structural implementation.</p>
                 </div>
             </div>
-
-            <div class="exp-content">
-                <div class="exp-responsibilities">
-                    <h4>Key Responsibilities:</h4>
-                    <ul>
-                        <li><strong>Field Data Collection & Analysis</strong><span>Collected, validated, and analyzed field survey data to support accurate reporting and informed decision-making. Used systematic approaches to identify data inconsistencies and ensure reliability.</span></li>
-                        <li><strong>Technical Report Preparation</strong><span>Prepared analytical and technical reports aligned with compliance standards and project documentation requirements. These reports informed project stakeholders on survey findings and progress.</span></li>
-                        <li><strong>Excel Data Analysis</strong><span>Utilized Microsoft Excel to organize survey data, identify trends, and detect inconsistencies. Created data visualizations that helped senior engineers interpret complex survey results.</span></li>
-                        <li><strong>Documentation Review</strong><span>Supported documentation review processes to ensure completeness, accuracy, and compliance with project specifications. Assisted in maintaining organized project files and records.</span></li>
-                        <li><strong>Compliance Monitoring</strong><span>Assisted in monitoring construction activities against approved specifications and design standards. Identified deviations and reported them to supervisors for timely corrective action.</span></li>
-                    </ul>
+            <div class="project-media">
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="images/projects/ndarugo/me1.jpg" alt="Setting Out Exercise" loading="lazy">
+                    </div>
+                    <div class="media-item">
+                        <img src="images/projects/ndarugo/palm3.jpeg" alt="Ndarugo Housing Start" loading="lazy">
+                    </div>
+                    <div class="media-item">
+                        <img src="images/projects/ndarugo/palm4.jpg" alt="Drawing Interpretation" loading="lazy">
+                    </div>
+                    <div class="media-item">
+                        <img src="images/projects/ndarugo/me1.jpg" alt="Setting Out Exercise" loading="lazy">
+                    </div>
+                    
                 </div>
             </div>
-        </div>
-
-        <!-- Experience Card 3 -->
-        <div class="exp-card">
-            <div class="exp-header">
-                <div class="exp-title">
-                    <h3>Civil Engineer Attachee - Meru Water & Sewerage Services Co. (MEWASSCO)</h3>
-                </div>
-                <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2024 - Apr 2024 | Meru County</p>
-                <p class="exp-role-description">Gained exposure to water infrastructure projects. Participated in pipeline installation, system inspections, metre reading, water production management, and water quality monitoring activities across Meru Town and its environs.</p>
-            </div>
-
-            <div class="exp-gallery">
-                <div class="gallery-grid" id="exp3-gallery">
-                    <div class="gallery-item"><img src="images/mewassco/mewass1.jpeg" alt="Water Pipeline Installation at Meru Makutano" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/mewassco/mewass2.jpg" alt="MEWASSCO Logo" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/mewassco/mewass3.jpg" alt="Sewer Treatment Plant" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/mewassco/mewass4.jpg" alt="Treatment Plant" loading="lazy"></div>
-                </div>
-            </div>
-
-            <div class="exp-content">
-                <div class="exp-responsibilities">
-                    <h4>Key Responsibilities:</h4>
-                    <ul>
-                        <li><strong>Pipeline Inspection & Installation</strong><span>Assisted in the inspection, installation, and maintenance of water distribution pipelines across Meru County. Gained practical understanding of underground utility networks and road drainage integration.</span></li>
-                        <li><strong>Field Surveys & Levelling</strong><span>Participated in field surveys and leveling works to determine pipeline alignment and gradient. Used surveying equipment (Dumpy level and RTK) to ensure accurate placement of water infrastructure.</span></li>
-                        <li><strong>Hydraulics & Stormwater Assessment</strong><span>Supported system inspections and intake assessments, strengthening knowledge of hydraulics, flow rates, and stormwater management principles. Contributed to infrastructure improvement recommendations.</span></li>
-                        <li><strong>Water Quality Monitoring</strong><span>Conducted water quality monitoring and data collection to ensure environmental compliance and public health standards. Documented findings and assisted in preparing compliance reports.</span></li>
-                        <li><strong>Asset Inspection & Field Reporting</strong><span>Assisted in asset inspections and preparation of detailed field reports for road and water asset management. These reports informed maintenance planning and infrastructure upgrades.</span></li>
-                    </ul>
-                </div>
+            <div class="project-tags">
+                <span class="tag">Affordable Housing</span>
+                <span class="tag">Surveying</span>
+                <span class="tag">Setting Out</span>
             </div>
         </div>
-
-        <!-- Experience Card 4 -->
-        <div class="exp-card">
-            <div class="exp-header">
-                <div class="exp-title">
-                    <h3>Civil Engineer Attachee - KeRRA, Meru County</h3>
-                </div>
-                <p class="exp-date"><i class="far fa-calendar-alt"></i> Jan 2023 - Apr 2023 | Laare-Ndumuru Road, Meru County</p>
-                <p class="exp-role-description">Worked on the Laare-Ndumuru Road Project, gaining experience in road construction supervision and materials testing. Participated in culvert construction, quality control, and laboratory testing of construction materials.</p>
-            </div>
-
-            <div class="exp-gallery">
-                <div class="gallery-grid" id="exp4-gallery">
-                    <div class="gallery-item"><img src="images/laare_ndumuru/laare1.jpg" alt="Leveling Road Section using Dumpy Level" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/laare_ndumuru/laare2.jpeg" alt="Box Culvert Construction, 2023" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/laare_ndumuru/laare3.jpeg" alt="Atterberg Limits Test, 2023" loading="lazy"></div>
-                    <div class="gallery-item"><img src="images/laare_ndumuru/laare4.jpeg" alt="Sieve Analysis Test, 2023" loading="lazy"></div>
-                </div>
-            </div>
-
-            <div class="exp-content">
-                <div class="exp-responsibilities">
-                    <h4>Key Responsibilities:</h4>
-                    <ul>
-                        <li>
-                            <strong>Culvert Construction Supervision</strong>
-                            <span>Assisted in checking levels during backfilling of culvert sections to ensure proper drainage and structural stability. Learned proper construction sequencing for box and pipe culverts.</span>
-                        </li>
-                        <li>
-                            <strong>Levelling & Setting Out</strong>
-                            <span>Participated in levelling and setting out works to establish accurate alignment and grades for road sections and culvert positions.</span>
-                        </li>
-                        <li>
-                            <strong>Quality Control & Standards Compliance</strong>
-                            <span>Supervised box culvert and access pipe culvert construction to ensure compliance with design standards and KeRRA specifications. Ensured proper reinforcement placement and concrete quality.</span>
-                        </li>
-                        <li>
-                            <strong>Materials Testing (Laboratory)</strong>
-                            <span>Performed materials testing including Atterberg limits for soil classification and sieve analysis for aggregate grading. These tests ensured construction materials met required quality standards.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      
     </div>
 </section>
 
@@ -514,7 +510,7 @@
                 <!-- Plan International Card -->
                 <div class="community-card">
                     <div class="community-logo">
-                        <img src="images/logos/plan-international-logo.png" alt="Plan International" class="org-logo">
+                        <img src="images/logos/plan-international-logo.png" alt="Plan International" class="org-logo" loading="lazy">
                         <span class="org-name">Plan International</span>
                     </div>
                     <p class="community-location"><i class="fas fa-map-marker-alt"></i> Tharaka North Subcounty</p>
@@ -524,11 +520,11 @@
                         <div class="community-impact">
                             <h4>Key Initiatives:</h4>
                             <ul>
-                                <li><strong>Protection Against FGM:</strong><span>Led sensitization campaigns reaching 1,000+ community members, creating awareness against Female Genital Mutilation.</span></li>
-                                <li><strong>Alternative Rites of Passage:</strong><span>Coordinated safe transition ceremonies for 120 girls, celebrating their womanhood without cutting, "Ntanîra na Mûgambo".</span></li>
-                                <li><strong>Preventing Early Pregnancies:</strong><span>Facilitated mentorship programs for school-going adolescent girls, providing SRHR education to 800+ young people.</span></li>
-                                <li><strong>Promoting Girl Child Education:</strong><span>Mobilized and sensitized local community leaders, parents, and elders on the importance of educating the girl child. Organized community barazas and dialogues that shifted cultural perceptions, leading to increased school enrollment and retention of girls in target areas.</span></li>
-                                <li><strong>Youth Empowerment:</strong><span>Organized vocational training workshops equipping 200+ youth with entrepreneurship and life skills.</span></li>
+                                <li><strong>Protection Against FGM:</strong><span>Led sensitization campaigns reaching 1,000+ community members.</span></li>
+                                <li><strong>Alternative Rites of Passage:</strong><span>Coordinated safe transition ceremonies for 120 girls, "Ntanîra na Mûgambo".</span></li>
+                                <li><strong>Preventing Early Pregnancies:</strong><span>Facilitated mentorship programs for 800+ young people.</span></li>
+                                <li><strong>Promoting Girl Child Education:</strong><span>Mobilized community leaders through 25+ barazas.</span></li>
+                                <li><strong>Youth Empowerment:</strong><span>Organized vocational training workshops for 200+ youth.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -537,21 +533,21 @@
                 <!-- Action Aid Card -->
                 <div class="community-card">
                     <div class="community-logo">
-                        <img src="images/logos/action-aid-logo.png" alt="Action Aid" class="org-logo">
+                        <img src="images/logos/action-aid-logo.png" alt="Action Aid" class="org-logo" loading="lazy">
                         <span class="org-name">Action Aid</span>
                     </div>
                     <p class="community-location"><i class="fas fa-map-marker-alt"></i> Chuka Igamba Ng'ombe Subcounty</p>
                     <h3 class="community-title">Komesha FGM Sasa! Promoter</h3>
                     <div class="community-details">
-                        <p>As a member of Wake and Shine, we partnered with Action Aid to spearhead the "Komesha FGM Sasa!" project, a grassroots movement dedicated to eradicating Female Genital Mutilation and promoting gender equality in Chuka Igamba Ng'ombe.</p>
+                        <p>Partnered with Action Aid to spearhead the "Komesha FGM Sasa!" project, a grassroots movement dedicated to eradicating Female Genital Mutilation and promoting gender equality.</p>
                         <div class="community-impact">
                             <h4>Key Achievements:</h4>
                             <ul>
-                                <li><strong>Awareness Campaigns:</strong><span>Organized 25 community dialogue forums engaging religious leaders, elders, and parents on the dangers of FGM and early marriage.</span></li>
-                                <li><strong>Legal Literacy:</strong><span>Educated community members on the Prohibition of Female Genital Mutilation Act, empowering them to report violations.</span></li>
-                                <li><strong>School Outreach:</strong><span>Visited 18 primary and secondary schools, reaching 1,500 students with anti-FGM messaging and reproductive health information.</span></li>
-                                <li><strong>Community Monitoring:</strong><span>Established 10 community watchdog groups trained to identify and report at-risk girls, leading to zero new FGM cases in 6 villages.</span></li>
-                                <li><strong>Girl Child Education:</strong><span>Partnered with local school boards and parent associations to champion girls' enrollment and retention, addressing barriers such as early marriage and domestic responsibilities.</span></li>
+                                <li><strong>Awareness Campaigns:</strong><span>Organized 25 community dialogue forums.</span></li>
+                                <li><strong>Legal Literacy:</strong><span>Educated community members on the Prohibition of FGM Act.</span></li>
+                                <li><strong>School Outreach:</strong><span>Visited 18 schools, reaching 1,500 students.</span></li>
+                                <li><strong>Community Monitoring:</strong><span>Established 10 watchdog groups, zero FGM cases in 6 villages.</span></li>
+                                <li><strong>Girl Child Education:</strong><span>Partnered with school boards to champion girls' enrollment.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -570,7 +566,7 @@
             
             <!-- Biblical Quotation -->
             <div class="community-quote">
-                <p class="quote-text">“Speak up for those who cannot speak for themselves, for the rights of all who are destitute. Speak up and judge fairly; defend the rights of the poor and needy.”</p>
+                <p class="quote-text">"Speak up for those who cannot speak for themselves, for the rights of all who are destitute. Speak up and judge fairly; defend the rights of the poor and needy."</p>
                 <p class="quote-source">— Proverbs 31:8-9</p>
             </div>
         </div>
@@ -614,66 +610,69 @@
     <!-- ========================================
          FOOTER
     ======================================== -->
-    <footer>
-        <div class="contact-details">
-            <p>
-                <a href="mailto:haronmuturi739@gmail.com" class="contact-link email-link"><i class="fas fa-envelope"></i> haronmuturi739@gmail.com</a>
-                <span class="separator">|</span>
-                <a href="tel:+254795171596" class="contact-link phone-link"><i class="fas fa-phone-alt"></i> +254 795 171 596</a>
-                <span class="separator">|</span>
-                <a href="https://maps.app.goo.gl/NA9LcKkK6agRrUBdA" target="_blank" rel="noopener noreferrer" class="contact-link location-link"><i class="fas fa-location-dot"></i> Chuka, Kenya</a>
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <a href="mailto:haronmuturi739@gmail.com" class="footer-link">
+                    <i class="fas fa-envelope"></i> haronmuturi739@gmail.com
+                </a>
+                <span class="footer-divider">|</span>
+                <a href="tel:+254795171596" class="footer-link">
+                    <i class="fas fa-phone-alt"></i> +254 795 171 596
+                </a>
+                <span class="footer-divider">|</span>
+                <a href="https://maps.app.goo.gl/NA9LcKkK6agRrUBdA" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fas fa-location-dot"></i> Chuka, Kenya
+                </a>
+            </div>
+            
+            <!-- CV Download -->
+            <div class="footer-cv">
+                <a href="downloads/HARON_MUTURI_CV.pdf" download class="cv-download-link">
+                    <i class="fas fa-file-pdf"></i> My CV / Resume
+                </a>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="footer-copyright">
+                <i class="far fa-copyright"></i> 2026 Haron Muturi. All rights reserved.
             </p>
         </div>
-        <div class="footer-cv">
-            <a href="downloads/HARON_MUTURI_CV.pdf" download class="cv-download-link">
-                <i class="fas fa-file-pdf"></i> My CV / Resume
-            </a>
-        </div>
-        <p><i class="far fa-copyright"></i> 2026 Haron Muturi. All rights reserved.</p>
-    </footer>
+    </div>
+</footer>
 
     <!-- ========================================
-         IMAGE MODAL WITH NAVIGATION
+         IMAGE MODAL
     ======================================== -->
-<div id="imageModal" class="modal">
-    <span class="close-modal">&times;</span>
-    
-    <!-- Navigation Arrows -->
-    <button class="modal-nav prev" id="prevImage" aria-label="Previous image">
-        <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class="modal-nav next" id="nextImage" aria-label="Next image">
-        <i class="fas fa-chevron-right"></i>
-    </button>
-    
-    <div class="modal-content-wrapper">
-        <img class="modal-content" id="modalImage">
-        <div class="image-stats">
-            <div class="stats-left">
-                <span class="view-count"><i class="fas fa-eye"></i> Views: <span id="viewCount">0</span></span>
-            </div>
-            <div class="stats-right">
-                <button class="like-btn" id="likeBtn"><i class="fas fa-heart"></i> Like <span id="likeCount">0</span></button>
-                <button class="dislike-btn" id="dislikeBtn"><i class="fas fa-thumbs-down"></i> Dislike <span id="dislikeCount">0</span></button>
-            </div>
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <button class="modal-nav prev" id="prevImage" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="modal-nav next" id="nextImage" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="modal-content-wrapper">
+            <img class="modal-content" id="modalImage">
+            <div class="image-caption-modal" id="modalCaption"></div>
         </div>
-        <div class="image-caption-modal" id="modalCaption"></div>
     </div>
-</div>
 
     <!-- ========================================
          FLOATING SOCIAL ICONS
     ======================================== -->
     <div class="floating-social">
-        <a href="https://wa.me/254795171596" target="_blank" class="floating-icon whatsapp" aria-label="WhatsApp">
+        <a href="https://wa.me/254795171596" target="_blank" rel="noopener noreferrer" class="floating-icon whatsapp" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
             <span class="icon-label">WhatsApp</span>
         </a>
-        <a href="https://linkedin.com/in/haron-muturi" target="_blank" class="floating-icon linkedin" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/haron-muturi" target="_blank" rel="noopener noreferrer" class="floating-icon linkedin" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
             <span class="icon-label">LinkedIn</span>
         </a>
-        <a href="https://x.com/GreenEngHaron" target="_blank" class="floating-icon twitter" aria-label="Twitter">
+        <a href="https://x.com/GreenEngHaron" target="_blank" rel="noopener noreferrer" class="floating-icon twitter" aria-label="Twitter">
             <i class="fab fa-twitter"></i>
             <span class="icon-label">Twitter</span>
         </a>
